@@ -875,6 +875,19 @@
     ctx.strokeStyle='rgba(50,20,60,.35)';ctx.lineWidth=W*.0015;
     rr(ctx,W*.03,H*.03,W*.94,H*.94,W*.008);ctx.stroke();
     circle(ctx,W*.16,H*.5,W*.005,'rgba(90,40,110,.4)');circle(ctx,W*.9,H*.4,W*.004,'rgba(90,40,110,.35)');
+    // wandering halloween ghosts in the corners
+    var ghosty=function(cx,cy,s,col){ctx.fillStyle=col;
+      ctx.beginPath();ctx.arc(cx,cy-s*.5,s*.5,Math.PI,0);
+      ctx.lineTo(cx+s*.5,cy+s*.5);ctx.quadraticCurveTo(cx+s*.38,cy+s*.36,cx+s*.25,cy+s*.55);
+      ctx.quadraticCurveTo(cx+s*.12,cy+s*.36,cx,cy+s*.55);ctx.quadraticCurveTo(cx-s*.12,cy+s*.36,cx-s*.25,cy+s*.55);
+      ctx.quadraticCurveTo(cx-s*.38,cy+s*.36,cx-s*.5,cy+s*.5);ctx.closePath();ctx.fill();
+      ctx.fillStyle='#241A12';
+      ctx.beginPath();ctx.arc(cx-s*.16,cy-s*.44,s*.07,0,7);ctx.fill();
+      ctx.beginPath();ctx.arc(cx+s*.16,cy-s*.44,s*.07,0,7);ctx.fill();};
+    ghosty(W*.31,H*.30,W*.10,'rgba(250,244,255,.95)');
+    ghosty(W*.24,H*.56,W*.075,'rgba(240,228,252,.9)');
+    ghosty(W*.85,H*.32,W*.085,'rgba(246,240,255,.93)');
+    ghosty(W*.58,H*.2,W*.06,'rgba(244,234,255,.85)');
   }
   function decorFor(ctx,W,H,tp){
     back(ctx,W,H,tp);
