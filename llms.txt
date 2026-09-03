@@ -1,0 +1,11 @@
+# TrendSnap
+
+Free, playful seasonal cards and event tools that run 100% in your browser. No login, nothing uploaded.
+
+## Tools
+- [Halloween Invitation & Boo Basket Tag Maker](https://aiharryone.github.io/trendsnap/halloween-invite.html): make a free Halloween 2026 party invitation or "You've been BOO'd!" neighbourhood tag. 9 templates, PNG download (1:1, 9:16) or 5×7 print.
+
+## Templates
+Classic · Witch · Retro · Vintage · Modern · Minimal · Kawaii · Pumpkin Patch · Haunted Forest
+
+Made by Ai Harryone. Questions: Ai_harryone@outlook.com

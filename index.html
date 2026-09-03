@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="E62785F51D89A3BD3AFBB2BC2BB07BF9">
+<title>TrendSnap – Free Seasonal Invites &amp; Event Tools (In-Browser)</title>
+<meta name="description" content="TrendSnap makes free, playful seasonal cards and event tools that run 100% in your browser. Make a Halloween 2026 invitation or Boo-basket tag, download PNG or print. No login, nothing uploaded.">
+<meta property="og:title" content="TrendSnap – Seasonal invites &amp; event tools, free in your browser">
+<meta property="og:description" content="Make a free Halloween 2026 invite or Boo-basket tag in your browser. No login, nothing uploaded.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aiharryone.github.io/trendsnap/">
+<meta property="og:image" content="https://aiharryone.github.io/trendsnap/assets/halloween-invite-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TrendSnap – Free seasonal event tools">
+<meta name="twitter:description" content="Halloween invites &amp; Boo tags, made in your browser. No login, nothing uploaded.">
+<link rel="canonical" href="https://aiharryone.github.io/trendsnap/">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"WebSite","name":"TrendSnap","description":"Free in-browser seasonal cards and event tools.","url":"https://aiharryone.github.io/trendsnap/","dateModified":"2026-09-03"},
+{"@context":"https://schema.org","@type":"ItemList","name":"TrendSnap tools","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Halloween Invitation & Boo Basket Tag Maker","url":"https://aiharryone.github.io/trendsnap/halloween-invite.html"}
+]}]
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "26b749ec88b5405bb9524de7d3deb750"}'></script>
+<!-- TODO(上线后):CF Dashboard 给 trendsnap 建独立 Web Analytics token 后全站替换 -->
+<style>
+  :root{
+    --bg:#140D20; --bg2:#1B1130; --ink:#F4EDFF; --muted:#B7A6D8;
+    --pumpkin:#FF8A2A; --acid:#9BD93B; --pink:#FF5D8F;
+    --panel:rgba(255,255,255,.055); --panel-border:rgba(255,255,255,.12);
+    --e:cubic-bezier(.22,1,.36,1); --e-out:cubic-bezier(0,0,.2,1); --pop:cubic-bezier(.34,1.56,.64,1);
+    --r:20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);min-height:100vh;overflow-x:hidden;
+    background:
+      radial-gradient(980px 540px at 84% -10%, rgba(255,138,42,.15), transparent 60%),
+      radial-gradient(820px 600px at -10% 30%, rgba(124,58,237,.16), transparent 62%),
+      radial-gradient(760px 620px at 55% 122%, rgba(155,217,59,.08), transparent 62%),
+      linear-gradient(180deg,var(--bg),var(--bg2));background-attachment:fixed}
+  body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+  #ambient{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+  nav{position:sticky;top:14px;z-index:50;display:flex;align-items:center;justify-content:space-between;
+    width:min(1080px,calc(100% - 28px));margin:14px auto 0;padding:10px 16px;border-radius:999px;
+    background:rgba(20,13,32,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border:1px solid var(--panel-border);overflow:hidden}
+  .navlinks{display:flex;gap:4px}
+  .navlinks a{position:relative;overflow:hidden;color:var(--muted);text-decoration:none;font-weight:600;font-size:13px;
+    letter-spacing:.06em;padding:8px 14px;border-radius:999px;transition:color .35s var(--e)}
+  .navlinks a::after{content:"";position:absolute;inset:0;border-radius:999px;opacity:0;transition:opacity .3s var(--e);
+    background:radial-gradient(120px 60px at var(--mx,50%) var(--my,50%),rgba(255,255,255,.16),transparent 70%)}
+  .navlinks a:hover{color:#fff}.navlinks a:hover::after{opacity:1}
+  .navlinks a.active{background:#fff;color:#1B1130;box-shadow:0 6px 18px -6px rgba(255,255,255,.5)}
+  .navlinks a.active::after{display:none}
+  .logo{font-weight:800;font-size:18px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px}
+  .logo .chip{width:30px;height:30px;border-radius:10px;background:linear-gradient(180deg,#FFB45E,#EA580C);
+    display:grid;place-items:center;box-shadow:0 4px 12px -3px rgba(255,138,42,.7);font-size:15px}
+  .brand{position:absolute;left:50%;top:70%;transform:translateX(-50%);z-index:1;pointer-events:none;
+    font-family:Impact,'Arial Black',sans-serif;font-size:clamp(90px,19vw,250px);letter-spacing:.02em;
+    color:rgba(255,255,255,.028);white-space:nowrap;user-select:none}
+  .hero{padding:60px 0 10px;text-align:center;position:relative}
+  .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 16px;border-radius:999px;font-weight:700;
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#FFD9B0;background:rgba(255,138,42,.14);
+    border:1px solid rgba(255,138,42,.35)}
+  h1{font-family:Impact,'Arial Black',sans-serif;font-weight:400;font-size:clamp(42px,7.4vw,82px);line-height:.97;
+    color:#fff;margin:18px auto 12px;max-width:920px}
+  h1 .g1{background:linear-gradient(100deg,#FF9E45,#FFD23F 45%,#FF5D8F);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1 .g2{color:#C7B2FF}
+  .sub{max-width:640px;margin:0 auto;color:var(--muted);font-size:clamp(15px,2.3vw,18.5px);line-height:1.55}
+  .sub b{color:#E9DFFB}
+  #count{font-weight:700;font-size:15px;margin-top:6px;color:var(--muted)}
+  #count b{color:var(--acid);font-variant-numeric:tabular-nums}
+  .cta{position:relative;overflow:hidden;cursor:pointer;border:0;display:inline-block;font-family:inherit;
+    font-weight:800;font-size:16.5px;color:#2A1202;border-radius:14px;padding:15px 30px;margin-top:24px;text-decoration:none;
+    transition:transform .35s var(--e),box-shadow .35s var(--e);
+    background:linear-gradient(180deg,rgba(255,255,255,.22),transparent 42%),linear-gradient(180deg,#FFB45E,#EA580C);
+    box-shadow:0 5px 0 rgba(0,0,0,.28),0 18px 44px -12px rgba(255,138,42,.8),inset 0 1px 0 rgba(255,255,255,.5)}
+  .cta::before{content:"";position:absolute;top:0;bottom:0;width:42%;left:-45%;rotate:14deg;filter:blur(5px);
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);animation:sheen 5.5s infinite}
+  .cta::after{content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s;
+    background:radial-gradient(220px 130px at var(--mx,50%) var(--my,50%),rgba(255,255,255,.5),transparent 70%)}
+  .cta:hover::after{opacity:.5}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(0,0,0,.28),0 26px 54px -12px rgba(255,138,42,.95),inset 0 1px 0 rgba(255,255,255,.5)}
+  .cta:active{transform:translateY(2px) scale(.99)}
+  @keyframes sheen{0%,58%{left:-45%}88%,100%{left:115%}}
+  .trust{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:16px 0 0;font-size:14px;color:var(--muted);font-weight:600}
+  .trust span::before{content:"✓ ";color:var(--acid)}
+  /* featured */
+  .featured{margin:44px auto 0;max-width:920px;display:grid;grid-template-columns:1.1fr .9fr;gap:0;border-radius:26px;
+    overflow:hidden;border:1px solid var(--panel-border);background:var(--panel);backdrop-filter:blur(10px)}
+  @media(max-width:760px){.featured{grid-template-columns:1fr}}
+  .feat-copy{padding:28px 30px}
+  .feat-copy .kick{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pumpkin);font-weight:800}
+  .feat-copy h2{font-family:Impact,'Arial Black',sans-serif;font-weight:400;font-size:clamp(26px,4vw,40px);color:#fff;margin:8px 0 10px;line-height:1.02}
+  .feat-copy p{color:var(--muted);font-size:15px;line-height:1.55}
+  .feat-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+  .feat-links a{font-weight:700;font-size:14px;color:#fff;background:rgba(255,255,255,.08);border:1px solid var(--panel-border);
+    padding:10px 16px;border-radius:999px;text-decoration:none;transition:.25s var(--e)}
+  .feat-links a:hover{background:rgba(255,255,255,.16);transform:translateY(-1px)}
+  .feat-links a.prim{background:linear-gradient(180deg,#FFB45E,#EA580C);color:#2A1202;border:0;box-shadow:0 8px 22px -8px rgba(255,138,42,.8)}
+  /* mock mini invite card (CSS only) */
+  .mock{position:relative;margin:18px;border-radius:20px;overflow:hidden;min-height:280px;
+    background:linear-gradient(170deg,#150E2E,#2A1E5C 80%,#1E123A)}
+  .mock .m{position:absolute;width:64px;height:64px;border-radius:50%;top:18px;right:22px;
+    background:radial-gradient(circle at 35% 32%,#FFF6D8,#FFD978 60%,#E8B93B)}
+  .mock .mb{position:absolute;left:14px;bottom:14px;width:52px;height:34px;background:#06020D;border-radius:6px;
+    clip-path:polygon(0 0,34% 0,50% 24%,66% 0,100% 0,78% 46%,100% 100%,0 100%,22% 46%)}
+  .mock .st{position:absolute;border-radius:50%;background:#fff}
+  .mock .txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#FFE3B8;gap:4px;padding:0 24px}
+  .mock .txt b{font-family:Impact,'Arial Black',sans-serif;font-weight:400;font-size:30px;line-height:1;letter-spacing:.5px}
+  .mock .txt span{font-size:12.5px;opacity:.85}
+  /* tools grid */
+  h2.sec{font-family:Impact,'Arial Black',sans-serif;font-weight:400;font-size:clamp(26px,4vw,40px);color:#fff;text-align:center;margin:54px 0 8px}
+  p.secsub{text-align:center;color:var(--muted);margin-bottom:22px;font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+  .toolc{position:relative;border:1px solid var(--panel-border);border-radius:var(--r);padding:20px;background:var(--panel);
+    backdrop-filter:blur(8px);text-decoration:none;color:var(--ink);transition:translate .35s var(--e),border-color .3s,box-shadow .3s;
+    overflow:hidden}
+  .toolc:hover{translate:0 -6px;border-color:rgba(255,138,42,.6);box-shadow:0 20px 40px -22px rgba(0,0,0,.8)}
+  .toolc .ico{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-size:23px;margin-bottom:12px}
+  .toolc h3{font-size:17px;margin-bottom:5px}
+  .toolc p{color:var(--muted);font-size:13.5px;line-height:1.45}
+  .toolc .tag{position:absolute;top:14px;right:14px;font-size:10.5px;font-weight:800;letter-spacing:.08em;padding:4px 9px;border-radius:999px}
+  .toolc .tag.new{background:var(--pumpkin);color:#2A1202}
+  .toolc .tag.soon{background:rgba(255,255,255,.1);color:var(--muted)}
+  .toolc.soon{opacity:.55;filter:saturate(.5)}
+  /* why */
+  .whys{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+  @media(max-width:760px){.whys{grid-template-columns:1fr}}
+  .why{border:1px solid var(--panel-border);border-radius:var(--r);padding:20px;background:var(--panel);backdrop-filter:blur(8px)}
+  .why b{display:block;margin-bottom:6px;color:#fff;font-size:15.5px}
+  .why p{color:var(--muted);font-size:13.5px;line-height:1.5}
+  .whys .why .e{font-size:22px}
+  .note{max-width:820px;margin:26px auto 0;text-align:center;color:var(--muted);font-size:14px}
+  .note a{color:#FFC99A}
+  footer{text-align:center;color:var(--muted);padding:40px 0 46px;font-size:13.5px;line-height:1.8}
+  footer a{color:#D8C6F5;text-decoration:none}footer a:hover{color:#fff}
+  .enter{opacity:0;translate:0 20px;transition:opacity .7s var(--e-out),translate .7s var(--e-out)}
+  body.ready .enter{opacity:1;translate:0 0}
+  body.settled .enter{transition-delay:0s!important}
+  .d1{transition-delay:.05s}.d2{transition-delay:.12s}.d3{transition-delay:.19s}.d4{transition-delay:.26s}.d5{transition-delay:.33s}.d6{transition-delay:.4s}
+  @media (prefers-reduced-motion:reduce){.enter{opacity:1;translate:0 0;transition:none}.cta::before{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="ambient"></canvas>
+<div class="brand">TRENDSNAP</div>
+
+<nav>
+  <a class="logo" href="index.html"><span class="chip">⚡</span>TrendSnap</a>
+  <div class="navlinks">
+    <a class="active" href="index.html">Home</a>
+    <a href="index.html#tools">Tools</a>
+    <a href="halloween-invite.html">Halloween Invite</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="hero enter d1">
+    <span class="eyebrow">🎃 Next up: Halloween 2026</span>
+    <h1>Seasonal invites &amp; event tools that are <span class="g1">fun to share</span></h1>
+    <p class="sub">Free little tools for <b>the moment you're in</b> — pick a spooky template, type your party details, and <b>share or print in 30 seconds</b>. Runs in your browser: no login, nothing uploaded.</p>
+    <p id="count">Halloween in <b id="countN">…</b> · Sat, Oct 31 2026</p>
+    <a class="cta" href="halloween-invite.html" id="mainCta">Make a Halloween Invite — free →</a>
+    <div class="trust">
+      <span>100% free</span><span>No login</span><span>Nothing uploaded</span><span>PNG + print-ready</span><span>One-tap share</span>
+    </div>
+  </div>
+
+  <section class="featured enter d2">
+    <div class="feat-copy">
+      <div class="kick">This season's tool</div>
+      <h2>Halloween Invitation &amp; Boo-basket Tag</h2>
+      <p>Three spooky templates — Classic, Witch, Retro — sized for Instagram, Stories or a printed 5×7 card. Or switch to a <b>"You've been BOO'd!"</b> neighbourhood tag and pass the fun on.</p>
+      <div class="feat-links">
+        <a class="prim" href="halloween-invite.html">Make one — free</a>
+        <a href="halloween-invite.html">See the card</a>
+      </div>
+    </div>
+    <a class="mock" href="halloween-invite.html" aria-label="Preview the Halloween invite maker">
+      <span class="m"></span>
+      <span class="mb"></span>
+      <span class="txt"><b>You're Invited</b><span>A spooky night · Sat, Oct 31</span><span>7:00 PM · 221 Elm Hollow Lane</span></span>
+    </a>
+  </section>
+
+  <h2 class="sec" id="tools">Event tools</h2>
+  <p class="secsub">One handy, shareable tool per season — made in your browser.</p>
+  <div class="grid enter d3">
+    <a class="toolc" href="halloween-invite.html">
+      <span class="tag new">NEW</span>
+      <span class="ico" style="background:rgba(255,138,42,.15)">🎃</span>
+      <h3>Halloween 2026 Invite</h3>
+      <p>Party invitations &amp; Boo-basket tags. Download PNG or print 5×7.</p>
+    </a>
+    <div class="toolc soon"><span class="tag soon">SOON</span><span class="ico" style="background:rgba(255,255,255,.05)">🦃</span><h3>Thanksgiving Card</h3><p>Seasonal thank-you / place cards for Nov 26.</p></div>
+    <div class="toolc soon"><span class="tag soon">SOON</span><span class="ico" style="background:rgba(255,255,255,.05)">🎄</span><h3>Christmas Card</h3><p>Quick festive cards for Dec 25.</p></div>
+    <div class="toolc soon"><span class="tag soon">SOON</span><span class="ico" style="background:rgba(255,255,255,.05)">💌</span><h3>Valentine Card</h3><p>Funny + sweet cards for Feb 14.</p></div>
+  </div>
+
+  <div class="whys enter d4">
+    <div class="why"><span class="e">🎁</span><b>Free &amp; no login</b><p>Every template and size is free, no watermark, no account — so sharing is frictionless.</p></div>
+    <div class="why"><span class="e">🔒</span><b>Private by design</b><p>Everything is drawn on a canvas in your browser. What you type never leaves your device.</p></div>
+    <div class="why"><span class="e">📤</span><b>Share &amp; print friendly</b><p>High-res PNG for WhatsApp/Instagram, plus a true 5×7 print size for paper invites.</p></div>
+  </div>
+
+  <p class="note enter d5">Making holiday fun, not formal documents. For <b>award certificates, diplomas &amp; business documents</b> use <a href="https://aiharryone.github.io/certificate-maker/" target="_blank" rel="noopener">Certificate Maker →</a></p>
+</div>
+
+<footer>
+  TrendSnap · free little tools for the moment you're in — nothing uploads<br>
+  Questions? <a href="mailto:Ai_harryone@outlook.com">Ai_harryone@outlook.com</a> · <a href="halloween-invite.html">Halloween Invite</a>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var $id=function(s){return document.getElementById(s)};
+  // ambient bats+stars
+  var amb=$id('ambient'),a=amb.getContext('2d'),DPR=Math.min(devicePixelRatio||1,2),bats=[],stars=[];
+  function makeAmb(){amb.width=innerWidth*DPR;amb.height=innerHeight*DPR;a.setTransform(DPR,0,0,DPR,0,0);
+    bats=[];for(var i=0;i<Math.max(3,Math.round(innerWidth/230));i++)bats.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight*.75,s:Math.random()*6+5,v:Math.random()*.4+.14,ph:Math.random()*6});
+    stars=[];for(var j=0;j<Math.max(14,Math.round(innerWidth/110));j++)stars.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.4+.4,tw:Math.random()*3});}
+  function bat(x,y,s){a.beginPath();a.moveTo(x-s,y);a.quadraticCurveTo(x-s*.5,y-s*.55,x,y-s*.18);a.quadraticCurveTo(x+s*.5,y-s*.55,x+s,y);a.quadraticCurveTo(x+s*.5,y+s*.1,x+s*.3,y+s*.06);a.quadraticCurveTo(x,y+s*.3,x-s*.3,y+s*.06);a.quadraticCurveTo(x-s*.5,y+s*.1,x-s,y);a.closePath();a.fill();}
+  var tp=0;function loop(t){requestAnimationFrame(loop);if(t-tp<50)return;tp=t;
+    a.clearRect(0,0,innerWidth,innerHeight);a.fillStyle='rgba(244,237,255,.5)';
+    for(var i=0;i<stars.length;i++){var s=stars[i];s.y-=.15;if(s.y<-2){s.y=innerHeight+2;s.x=Math.random()*innerWidth}
+      a.globalAlpha=.25+.25*Math.sin(t*.001+s.tw);a.beginPath();a.arc(s.x,s.y,s.r,0,7);a.fill();}
+    a.globalAlpha=1;a.fillStyle='rgba(230,215,255,.2)';
+    for(var j=0;j<bats.length;j++){var b=bats[j];b.x+=b.v*Math.cos(t*.0008+b.ph);b.y+=Math.sin(t*.0008+b.ph)*.14;
+      if(b.x>innerWidth+20)b.x=-20;if(b.x<-20)b.x=innerWidth+20;bat(b.x,b.y+Math.sin(t*.003+b.ph)*4,b.s);}}
+  // cursor light
+  function lightOn(scope){scope.addEventListener('pointermove',function(e){var els=scope.matches('a')?[scope]:scope.querySelectorAll('a');
+    els.forEach(function(x){var r=x.getBoundingClientRect();x.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');x.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});});}
+  lightOn(document.querySelector('nav'));
+  var cta=$id('mainCta');cta.addEventListener('pointermove',function(e){var r=cta.getBoundingClientRect();
+    cta.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');cta.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});
+  // countdown
+  function tick(){var d=new Date(2026,9,31,0,0,0)-new Date();
+    if(d<=0){$id('countN').textContent="— it's Halloween! 🎃";return}
+    var days=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);
+    $id('countN').textContent=days+'d '+h+'h '+m+'m '+s+'s';}
+  tick();setInterval(tick,1000);
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){makeAmb();requestAnimationFrame(loop)}
+  requestAnimationFrame(function(){document.body.classList.add('ready');
+    setTimeout(function(){document.body.classList.add('settled')},900)});
+  setTimeout(function(){if(!document.body.classList.contains('ready'))document.body.classList.add('ready','settled')},2600);
+})();
+</script>
+</body>
+</html>

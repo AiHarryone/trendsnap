@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aiharryone.github.io/trendsnap/sitemap.xml
