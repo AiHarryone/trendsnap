@@ -407,7 +407,7 @@
     // witch hat
     ctx.beginPath();ctx.moveTo(Wx-U*.95,Wy-U*.85);ctx.lineTo(Wx-U*.05,Wy-U*1.95);ctx.lineTo(Wx+U*.7,Wy-U*.78);ctx.quadraticCurveTo(Wx+U*.1,Wy-U*.6,Wx-U*.95,Wy-U*.85);ctx.closePath();ctx.fill();
     ctx.beginPath();ctx.ellipse(Wx-U*.1,Wy-U*.72,U*1.1,U*.16,-.12,0,7);ctx.fill();
-    diamond(ctx,Wx-U*.02,Wy-U*.9,U*.09,'#FFD23F');
+    ctx.fillStyle='#FFD23F';ctx.beginPath();ctx.moveTo(Wx-U*.11,Wy-U*.9);ctx.lineTo(Wx-U*.02,Wy-U*.99);ctx.lineTo(Wx+U*.07,Wy-U*.9);ctx.lineTo(Wx-U*.02,Wy-U*.81);ctx.closePath();ctx.fill();
     // hands gripping broom
     circle(ctx,Wx-U*.85,Wy-U*.28,U*.13,'#0B0620');circle(ctx,Wx-U*1.5,Wy-U*.02,U*.13,'#0B0620');
     // far spooky castle spires right
