@@ -1177,18 +1177,11 @@
 
   // ---------- BOO tag layout ----------
   function drawBoo(ctx,W,H,tp){
-    /* 动画模板与 Invitation 一致:动态 decor 铺底;静态模板用原纯背景 */
-    if(tp.anim)decorFor(ctx,W,H,tp);
-    else{back(ctx,W,H,tp);
-    // faint sky stars for dark, none loud for light
-    if(tp.dark)starsD(ctx,W,H,Math.round(W/8),'rgba(255,255,255,.45)');}
+    /* 与 Invitation 完全一致:所有模板都用同款 decor 场景铺底(2026-09-05)
+       白色卡片衬底已移除(用户:白框框去掉),场景贴图直接可见;角标小月亮移除(避免与场景月亮重叠) */
+    decorFor(ctx,W,H,tp);
     var DISP=D();
     var pad=W*.05,tagW=W-pad*2,tagH=H*.88;
-    // card
-    ctx.shadowColor='rgba(0,0,0,.45)';ctx.shadowBlur=W*.02;ctx.shadowOffsetY=W*.008;
-    ctx.fillStyle=tp.dark?'rgba(255,255,255,.07)':'rgba(255,255,255,.55)';
-    rr(ctx,pad,H*.06,tagW,tagH,W*.05);ctx.fill();
-    ctx.shadowBlur=0;ctx.shadowOffsetY=0;
     // inner dashed frame
     ctx.strokeStyle=tp.ink;ctx.lineWidth=W*.0035;ctx.setLineDash([W*.011,W*.008]);
     rr(ctx,pad+W*.025,H*.06+W*.025,tagW-W*.05,tagH-W*.05,W*.036);ctx.stroke();ctx.setLineDash([]);
@@ -1196,8 +1189,6 @@
     var hy=H*.06+W*.018;circle(ctx,W*.5-W*.06,hy,W*.021,tp.bg1);circle(ctx,W*.5+W*.06,hy,W*.021,tp.bg1);
     ctx.strokeStyle=tp.ink;ctx.lineWidth=W*.004;
     ctx.beginPath();ctx.arc(W*.5-W*.06,hy,W*.021,0,7);ctx.stroke();ctx.beginPath();ctx.arc(W*.5+W*.06,hy,W*.021,0,7);ctx.stroke();
-    // corner deco (a small moon/bat)
-    if(tp.deco!=='minimal'){circle(ctx,W*.8,H*.12,W*.05,tp.moon);batC(ctx,W*.18,H*.15,W*.016,tp.ink);}
     // headline
     ctx.textAlign='center';
     ctx.font='normal '+W*.018+'px '+(tpl().body||BODY);ctx.fillStyle=tp.ink2;
