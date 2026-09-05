@@ -1029,8 +1029,8 @@
   function decorCauldron(ctx,W,H,tp){
     var t=AT||1200;
     // 飞天女巫(顶部来回飘)
-    var wx=W*.5+Math.sin(t*.0004)*W*.33, wy=H*.115+Math.sin(t*.0013)*H*.018, ws=W*.058;
-    var wc='rgba(4,10,7,.92)';
+    var wx=W*.5+Math.sin(t*.0009)*W*.33, wy=H*.115+Math.sin(t*.002)*H*.018, ws=W*.058;
+    var wc='rgba(168,196,176,.92)';
     ctx.strokeStyle=wc;ctx.lineWidth=Math.max(1.5,W*.004);ctx.lineCap='round';
     ctx.beginPath();ctx.moveTo(wx-ws*1.15,wy+ws*.4);ctx.lineTo(wx+ws*.35,wy-ws*.22);ctx.stroke();
     ctx.lineWidth=Math.max(1,W*.003);
@@ -1279,7 +1279,7 @@
     setTimeout(function(){
     try{
       var dim=SIZE_MAP[SIZE],W=dim[0],H=dim[1];
-      var s=Math.min(1,640/Math.max(W,H));W=Math.round(W*s);H=Math.round(H*s);
+      var s=Math.min(1,1080/Math.max(W,H));W=Math.round(W*s);H=Math.round(H*s);
       var off=document.createElement('canvas');off.width=W;off.height=H;
       var g=off.getContext('2d',{willReadFrequently:true});
       var FR=16,DL=80,keep=AT,bufs=[];
