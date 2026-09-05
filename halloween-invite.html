@@ -1287,9 +1287,16 @@
       if(MODE==='invite'){tc=document.createElement('canvas');tc.width=W;tc.height=H;
         drawInviteText(tc.getContext('2d'),W,H,tp);}
       var FR=16,DL=80,keep=AT,bufs=[];
+      /* 文字区矩形(比例):逐帧冻结为第0帧像素 → 文字+紧贴背景完全静止 */
+      var R=[[.05,.29,.9,.145],[.28,.435,.44,.05],[.12,.5,.76,.23],[.18,.79,.64,.075],[.18,.9,.64,.05]];
+      var f0c=null;
       for(var i=0;i<FR;i++){AT=1200+i*DL;
-        if(MODE==='invite'){decorFor(g,W,H,tp);g.drawImage(tc,0,0);}
-        else drawBoo(g,W,H,tp);
+        if(MODE==='invite'){decorFor(g,W,H,tp);g.drawImage(tc,0,0);
+          if(i===0){f0c=document.createElement('canvas');f0c.width=W;f0c.height=H;
+            f0c.getContext('2d').drawImage(g.canvas,0,0);}
+          else{for(var r2=0;r2<R.length;r2++){var q=R[r2];
+            g.drawImage(f0c,q[0]*W,q[1]*H,q[2]*W,q[3]*H,q[0]*W,q[1]*H,q[2]*W,q[3]*H);}}
+        } else drawBoo(g,W,H,tp);
         bufs.push(g.getImageData(0,0,W,H).data.slice());}
       AT=keep;
       var q0=quantize(bufs[0],W,H),pal=q0.palette;
