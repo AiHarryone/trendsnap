@@ -1182,6 +1182,7 @@
     else{back(ctx,W,H,tp);
     // faint sky stars for dark, none loud for light
     if(tp.dark)starsD(ctx,W,H,Math.round(W/8),'rgba(255,255,255,.45)');}
+    var DISP=D();
     var pad=W*.05,tagW=W-pad*2,tagH=H*.88;
     // card
     ctx.shadowColor='rgba(0,0,0,.45)';ctx.shadowBlur=W*.02;ctx.shadowOffsetY=W*.008;
