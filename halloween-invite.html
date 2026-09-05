@@ -380,16 +380,16 @@
       if(b.x>innerWidth+20)b.x=-20;if(b.x<-20)b.x=innerWidth+20;batS(b.x,b.y+Math.sin(t*.003+b.ph)*4,b.s);}
     ambPumpkin(t);}
   // 页面氛围:左下角大发光南瓜(2026-09-05 用户要求)
-  function ambPumpkin(t){var w=innerWidth,h=innerHeight,r=Math.min(w,h)*.085,x=w*.075,y=h*.3;
+  function ambPumpkin(t){var w=innerWidth,h=innerHeight,r=Math.min(w,h)*.105,x=w*.075,y=h*.3;
     var fl=.55+.3*Math.sin(t*.008)+.15*Math.sin(t*.023+1.3);if(fl<.2)fl=.2;
-    var g=a.createRadialGradient(x,y,r*.2,x,y,r*(2+fl));
-    g.addColorStop(0,'rgba(255,140,40,'+(.10+.10*fl).toFixed(3)+')');g.addColorStop(1,'rgba(0,0,0,0)');
-    a.fillStyle=g;a.fillRect(x-r*3,y-r*3,r*6,r*6);
-    a.fillStyle='#221106';a.beginPath();a.ellipse(x,y,r,r*.85,0,0,7);a.fill();
-    a.strokeStyle='rgba(255,138,42,.3)';a.lineWidth=1.5;
+    var g=a.createRadialGradient(x,y,r*.2,x,y,r*(2.3+fl));
+    g.addColorStop(0,'rgba(255,150,50,'+(.22+.2*fl).toFixed(3)+')');g.addColorStop(1,'rgba(0,0,0,0)');
+    a.fillStyle=g;a.fillRect(x-r*3.4,y-r*3.4,r*6.8,r*6.8);
+    a.fillStyle='#33180A';a.beginPath();a.ellipse(x,y,r,r*.85,0,0,7);a.fill();
+    a.strokeStyle='rgba(255,150,60,.55)';a.lineWidth=2;
     a.beginPath();a.ellipse(x,y,r*.72,r*.83,0,0,7);a.stroke();
     a.fillStyle='#3E6B2A';a.fillRect(x-r*.06,y-r*.99,r*.12,r*.2);
-    a.globalAlpha=.7+.3*fl;a.fillStyle='#FFB347';
+    a.globalAlpha=.75+.25*fl;a.fillStyle='#FFC165';
     a.beginPath();a.moveTo(x-r*.42,y-r*.28);a.lineTo(x-r*.12,y-r*.28);a.lineTo(x-r*.27,y-r*.52);a.closePath();a.fill();
     a.beginPath();a.moveTo(x+r*.12,y-r*.28);a.lineTo(x+r*.42,y-r*.28);a.lineTo(x+r*.27,y-r*.52);a.closePath();a.fill();
     a.beginPath();a.moveTo(x-r*.46,y+r*.06);a.lineTo(x+r*.46,y+r*.06);a.lineTo(x+r*.28,y+r*.26);a.lineTo(x+r*.1,y+r*.06);a.lineTo(x-r*.1,y+r*.26);a.lineTo(x-r*.28,y+r*.26);a.closePath();a.fill();
