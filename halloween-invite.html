@@ -251,8 +251,7 @@
       <button class="cta dl" id="btnShare">📤 Share card</button>
       <button class="cta dl" id="btnDl">⬇ Download</button>
       <p style="font-size:12px;color:var(--muted);margin:4px 0 0">Animated templates download as a looping GIF; others as PNG.</p>
-      <button class="cta ghost" id="btnCopyImg" style="margin-top:10px">📋 Copy image</button>
-      <p style="font-size:12px;color:var(--muted);margin:8px 0 0">📤 opens your device's share sheet with the card attached — WhatsApp, Telegram, Instagram, Messages, Email and more. On desktop the card is saved and a share window opens; or use 📋 Copy image and paste it anywhere.</p>
+      <p style="font-size:12px;color:var(--muted);margin:8px 0 0">📤 opens your device's share sheet with the card attached — WhatsApp, Telegram, Instagram, Messages, Email and more. On desktop the card is saved and a share window opens.</p>
       <button class="cta ghost" id="btnPrint" style="margin-top:10px">🖨 Print card</button>
     </div>
 
@@ -1339,15 +1338,6 @@
       btn.textContent='Saved ✓ attach it';
     }).catch(function(e){if(!e||e.name!=='AbortError')console.error(e);})
       .then(function(){setTimeout(function(){btn.textContent=old;btn.disabled=false;},1500);});
-  });
-  $id('btnCopyImg').addEventListener('click',function(){
-    var btn=$id('btnCopyImg'),old=btn.textContent;
-    try{$id('pv').toBlob(function(b){
-      if(!b){btn.textContent='Copy failed';return;}
-      navigator.clipboard.write([new ClipboardItem({'image/png':b})]).then(function(){
-        btn.textContent='Copied ✓ paste it';setTimeout(function(){btn.textContent=old;},1600);
-      }).catch(function(){btn.textContent='Use Download instead';setTimeout(function(){btn.textContent=old;},1800);});
-    });}catch(e){btn.textContent='Use Download instead';setTimeout(function(){btn.textContent=old;},1800);}
   });
   $id('btnPrint').addEventListener('click',function(){
     var c=document.createElement('canvas');c.width=1500;c.height=2100;
