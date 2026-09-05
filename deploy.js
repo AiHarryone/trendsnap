@@ -43,7 +43,7 @@ function api(method, url, body) {
 
 async function main() {
   // 1. collect files recursively (skip .git, node_modules, test)
-  const SKIP = new Set(['.git', 'node_modules', 'test', '.wrangler', 'wrangler.toml', 'worker-cf.js']);
+  const SKIP = new Set(['.git', 'node_modules', 'test', '.wrangler', 'wrangler.toml', 'worker-cf.js', 'promo', 'seo']);
   const files = [];
   (function walk(dir, rel) {
     for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
