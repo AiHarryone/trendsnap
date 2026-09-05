@@ -1141,8 +1141,8 @@
     ctx.globalAlpha=1;
   }
 
-  function drawInvite(ctx,W,H,tp){
-    decorFor(ctx,W,H,tp);
+  function drawInvite(ctx,W,H,tp){decorFor(ctx,W,H,tp);drawInviteText(ctx,W,H,tp);}
+  function drawInviteText(ctx,W,H,tp){
     var DISP=D(),disp=function(sz){return 'normal '+sz+'px '+DISP};
     var ink=tp.ink,ink2=tp.ink2;
     var f=$id('f-party').value.trim()||"You're Invited — A Spooky Night";
@@ -1282,9 +1282,14 @@
       var s=Math.min(1,1080/Math.max(W,H));W=Math.round(W*s);H=Math.round(H*s);
       var off=document.createElement('canvas');off.width=W;off.height=H;
       var g=off.getContext('2d',{willReadFrequently:true});
+      /* 文字层只画一次,逐帧原样叠加 → GIF 里文字像素级静止(2026-09-05 用户反馈) */
+      var tc=null;
+      if(MODE==='invite'){tc=document.createElement('canvas');tc.width=W;tc.height=H;
+        drawInviteText(tc.getContext('2d'),W,H,tp);}
       var FR=16,DL=80,keep=AT,bufs=[];
       for(var i=0;i<FR;i++){AT=1200+i*DL;
-        if(MODE==='invite')drawInvite(g,W,H,tp);else drawBoo(g,W,H,tp);
+        if(MODE==='invite'){decorFor(g,W,H,tp);g.drawImage(tc,0,0);}
+        else drawBoo(g,W,H,tp);
         bufs.push(g.getImageData(0,0,W,H).data.slice());}
       AT=keep;
       var q0=quantize(bufs[0],W,H),pal=q0.palette;
