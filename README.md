@@ -10,18 +10,19 @@
 
 ## 🎃 Halloween Invitation Maker
 
-Pick one of **20 hand-drawn illustrated templates**, type your party details, and export a share-ready invitation. Everything is rendered on a `<canvas>` in your browser — **nothing is uploaded, there is no account, and it's 100% free.**
+Pick one of **25 hand-drawn illustrated templates — 5 of them animated**, type your party details, and export a share-ready invitation (PNG, or looping GIF for the animated ones). Everything is rendered on a `<canvas>` in your browser — **nothing is uploaded, there is no account, and it's 100% free.**
 
 | | | |
 |---|---|---|
 | [![Jack-o'-lantern template](assets/readme-jack.png)](https://aiharryone.github.io/trendsnap/halloween-invite.html) | [![Witch template](assets/readme-witch.png)](https://aiharryone.github.io/trendsnap/halloween-invite.html) | [![Moon & bat template](assets/readme-moonbat.png)](https://aiharryone.github.io/trendsnap/halloween-invite.html) |
 | [![Big pumpkin template](assets/readme-bigpump.png)](https://aiharryone.github.io/trendsnap/halloween-invite.html) | [![Violet night template](assets/readme-violet.png)](https://aiharryone.github.io/trendsnap/halloween-invite.html) | [![Cobweb template](assets/readme-cobweb.png)](https://aiharryone.github.io/trendsnap/halloween-invite.html) |
 
-*6 of 20 templates — see all of them in the [maker](https://aiharryone.github.io/trendsnap/halloween-invite.html).*
+*6 of 25 templates — see all of them (5 animated ✨) in the [maker](https://aiharryone.github.io/trendsnap/halloween-invite.html).*
 
 ### What you get
 
-- 🎨 **20 hand-drawn templates** — jack-o'-lanterns, ghosts, bats, haunted houses, cobwebs, kawaii pumpkins and more
+- 🎨 **25 hand-drawn templates — 5 animated** ✨: flickering jack-o'-lantern, floating ghosts, bubbling cauldron, shooting stars, swaying candlelight
+- 🎞 **Animated GIF export** — the animated templates export as a looping GIF; all templates export still PNG
 - ⚡ **Live preview** — edit the title, date, time and place; the card updates as you type
 - 📐 **3 export sizes** — 1:1 for feed posts, 9:16 for stories, 5×7 for printing
 - 📲 **One-click share** — native share sheet on mobile, download on desktop

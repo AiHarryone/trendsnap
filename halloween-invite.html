@@ -195,6 +195,11 @@
 
       <h3>Template · 7 styles</h3>
       <div class="tpls" id="tplSel">
+        <button data-tpl="flicker"><span class="dot" style="background:linear-gradient(160deg,#120B06 35%,#FF9A33)"></span>Flicker ✨</button>
+        <button data-tpl="ghosts"><span class="dot" style="background:linear-gradient(160deg,#1A1033 35%,#B9A6FF)"></span>Ghost Drift ✨</button>
+        <button data-tpl="cauldron"><span class="dot" style="background:linear-gradient(160deg,#0A1710 35%,#7CE8A2)"></span>Witch's Cauldron ✨</button>
+        <button data-tpl="starfall"><span class="dot" style="background:linear-gradient(160deg,#050A1C 35%,#FFD166)"></span>Starfall ✨</button>
+        <button data-tpl="candle"><span class="dot" style="background:linear-gradient(160deg,#160B08 35%,#FFB347)"></span>Candlelight ✨</button>
         <button data-tpl="orange" class="on"><span class="dot" style="background:linear-gradient(160deg,#0F0A1A 35%,#FF8A2A)"></span>Classic</button>
         <button data-tpl="witch"><span class="dot" style="background:linear-gradient(160deg,#150E2E 35%,#9BD93B)"></span>Witch</button>
         <button data-tpl="retro"><span class="dot" style="background:linear-gradient(160deg,#C2410C 35%,#FFF6E0)"></span>Retro</button>
@@ -243,8 +248,11 @@
       </div>
 
       <h3>Download</h3>
+      <button class="cta dl" id="btnShare">📤 Share card</button>
       <button class="cta dl" id="btnDl">⬇ Download PNG</button>
-      <p style="font-size:12px;color:var(--muted);margin:8px 0 0">Then post the image in Instagram / WhatsApp / Facebook.</p>
+      <button class="cta dl" id="btnGif" style="display:none">🎞 Download animated GIF</button>
+      <button class="cta ghost" id="btnCopyImg" style="margin-top:10px">📋 Copy image</button>
+      <p style="font-size:12px;color:var(--muted);margin:8px 0 0">📤 opens your device's share sheet with the card attached — WhatsApp, Telegram, Instagram, Messages, Email and more. On desktop the card is saved and a share window opens; or use 📋 Copy image and paste it anywhere.</p>
       <button class="cta ghost" id="btnPrint" style="margin-top:10px">🖨 Print card</button>
     </div>
 
@@ -263,9 +271,11 @@
           <a class="sharebtn" data-net="fb" href="#" target="_blank" rel="noopener">Facebook</a>
           <a class="sharebtn" data-net="reddit" href="#" target="_blank" rel="noopener">Reddit</a>
           <a class="sharebtn" data-net="tg" href="#" target="_blank" rel="noopener">Telegram</a>
+          <a class="sharebtn" data-net="li" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="sharebtn" data-net="em" href="#" rel="noopener">✉ Email</a>
         </div>
         <div class="copyrow">
-          <input id="capText" readonly value="🎃 I made a free Halloween invite — 7 templates, no login: https://aiharryone.github.io/trendsnap/">
+          <input id="capText" readonly value="🎃 I made a free animated Halloween invite — 25 templates, no login: https://aiharryone.github.io/trendsnap/">
           <button class="cta ghost small" id="btnCopy" style="flex:0 0 auto;width:auto">Copy</button>
         </div>
       </div>
@@ -273,7 +283,7 @@
   </div>
 
   <div class="faq enter d3">
-    <details open><summary>Is the Halloween invite maker really free?</summary><p>Yes — all 20 templates and every canvas size are free, with no watermark and no account.</p></details>
+    <details open><summary>Is the Halloween invite maker really free?</summary><p>Yes — all 25 templates and every canvas size are free, with no watermark and no account. Five templates are animated and export as GIF.</p></details>
     <details><summary>Are my party details uploaded anywhere?</summary><p>No. Every letter is drawn onto a canvas inside your browser. Nothing you type ever leaves your device.</p></details>
     <details><summary>How many templates can I choose from?</summary><p>Twenty: Classic, Witch, Retro, Vintage, Modern, Minimal, Kawaii, Pumpkin Patch, Haunted Forest, Jack Light, Violet Witch, Wicked Night, Big Pumpkin, Glow Jack, Orange Sky, Ember Frame, Masquerade, Moon & Bats, Haunted House and Web Corner — enough range for every party mood.</p></details>
     <details><summary>How do I send the invitation?</summary><p>Tap <b>Download PNG</b> and post the image anywhere (Instagram / WhatsApp / Facebook). Or use <b>Print card</b> for paper invites — it's a real 5×7 print size.</p></details>
@@ -290,6 +300,7 @@
 
 <div id="printArea"><img id="printImg" alt="Halloween invitation"></div>
 
+<script src="vendor/omggif.js"></script>
 <script>
 (function(){
   "use strict";
@@ -297,6 +308,7 @@
   var $id=function(s){return document.getElementById(s)};
   var BODY='"Segoe UI",Roboto,Helvetica,Arial,sans-serif';
   var MODE='invite',TPL='orange',SIZE='square';
+  var AT=1200; // 动画相位时钟(ms);静态模板忽略它,动画模板读它算相位
 
   var TEMPLATES={
     orange:{deco:'classic',disp:'Impact,"Arial Black"',body:BODY,dark:true,
@@ -338,7 +350,17 @@
     house:{deco:'house',disp:'Impact,"Arial Black"',body:BODY,dark:true,
       bg1:'#0B0716',bg2:'#1F1233',ink:'#F0E8FF',ink2:'#FFD27A',moon:'#ECE4FF'},
     cobweb:{deco:'cobweb',disp:'Impact,"Arial Black"',body:BODY,dark:false,
-      bg1:'#F8F1E4',bg2:'#E7D8C8',ink:'#241A12',ink2:'#5C3A6B',moon:'#F1E6D6'}
+      bg1:'#F8F1E4',bg2:'#E7D8C8',ink:'#241A12',ink2:'#5C3A6B',moon:'#F1E6D6'},
+    flicker:{deco:'flicker',disp:'Impact,"Arial Black"',body:BODY,dark:true,anim:true,
+      bg1:'#120B06',bg2:'#2C1306',ink:'#FFE9B0',ink2:'#FF9A33',moon:'#FFC978'},
+    ghosts:{deco:'ghosts',disp:'Impact,"Arial Black"',body:BODY,dark:true,anim:true,
+      bg1:'#1A1033',bg2:'#2E1B4F',ink:'#F3EBFF',ink2:'#B9A6FF',moon:'#E9E0FF'},
+    cauldron:{deco:'cauldron',disp:'Impact,"Arial Black"',body:BODY,dark:true,anim:true,
+      bg1:'#0A1710',bg2:'#16321F',ink:'#EAF6EC',ink2:'#7CE8A2',moon:'#CFFFE0'},
+    starfall:{deco:'starfall',disp:'Impact,"Arial Black"',body:BODY,dark:true,anim:true,
+      bg1:'#050A1C',bg2:'#13234A',ink:'#EAF2FF',ink2:'#FFD166',moon:'#FFF3C4'},
+    candle:{deco:'candle',disp:'Georgia,"Times New Roman",serif',body:BODY,dark:true,anim:true,
+      bg1:'#160B08',bg2:'#33150C',ink:'#FFEDD5',ink2:'#FFB347',moon:'#FFD9A0'}
   };
   function tpl(){return TEMPLATES[TPL]}
   function D() {return tpl().disp} function B(){return tpl().body||BODY}
@@ -356,6 +378,9 @@
     a.globalAlpha=1;a.fillStyle='rgba(230,215,255,.2)';
     for(var j=0;j<bats.length;j++){var b=bats[j];b.x+=b.v*Math.cos(t*.0008+b.ph);b.y+=Math.sin(t*.0008+b.ph)*.14;
       if(b.x>innerWidth+20)b.x=-20;if(b.x<-20)b.x=innerWidth+20;batS(b.x,b.y+Math.sin(t*.003+b.ph)*4,b.s);}}
+  // ---------- 卡片预览动画循环:只有当前模板是动画模板时才重绘 ----------
+  var pv_=0;function pvLoop(t){requestAnimationFrame(pvLoop);if(t-pv_<60)return;pv_=t;
+    if(tpl().anim){AT=t;render();}}
 
   // ---------- shape helpers ----------
   function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
@@ -891,11 +916,195 @@
   }
   function decorFor(ctx,W,H,tp){
     back(ctx,W,H,tp);
-    var f={classic:decorClassic,witch:decorWitch,retro:decorRetro,vintage:decorVintage,modern:decorModern,minimal:decorMinimal,kawaii:decorKawaii,patch:decorPatch,fog:decorFog,jack:decorJack,violet:decorViolet,night:decorNight,bigpump:decorBigpump,face:decorFace,twilight:decorTwilight,ember:decorEmber,purpure:decorPurpure,moonbat:decorMoonbat,house:decorHouse,cobweb:decorCobweb}[tp.deco];
+    var f={classic:decorClassic,witch:decorWitch,retro:decorRetro,vintage:decorVintage,modern:decorModern,minimal:decorMinimal,kawaii:decorKawaii,patch:decorPatch,fog:decorFog,jack:decorJack,violet:decorViolet,night:decorNight,bigpump:decorBigpump,face:decorFace,twilight:decorTwilight,ember:decorEmber,purpure:decorPurpure,moonbat:decorMoonbat,house:decorHouse,cobweb:decorCobweb,flicker:decorFlicker,ghosts:decorGhosts,cauldron:decorCauldron,starfall:decorStarfall,candle:decorCandle}[tp.deco];
+  /* Flicker 南瓜灯闪灵:焰光不规则闪烁+光晕呼吸+火星上飘+星星眨眼 (2026-09-05) */
+  function decorFlicker(ctx,W,H,tp){
+    var t=AT||1200;
+    for(var i=0;i<14;i++){var sx=W*(.06+((i*61.7)%1)*.88),sy=H*(.05+((i*37.3)%1)*.38);
+      var tw=.3+.5*Math.max(0,Math.sin(t*.002+i*2.1));
+      ctx.globalAlpha=tw;circle(ctx,sx,sy,Math.max(1.2,W*.0035),'#FFE9B0');}
+    ctx.globalAlpha=1;
+    circle(ctx,W*.8,H*.14,W*.075,tp.moon);
+    circle(ctx,W*.835,H*.12,W*.066,tp.bg1);
+    batC(ctx,W*.24+Math.sin(t*.0009)*W*.02,H*.18+Math.sin(t*.0021)*H*.012,W*.02,'rgba(20,12,6,.75)');
+    hill(ctx,W,H,'rgba(0,0,0,.45)',.9,.5);
+    var px=W*.5,py=H*.78,pr=W*.19;
+    var fl=.55+.28*Math.sin(t*.012)+.17*Math.sin(t*.031+2.1);
+    if(fl<.15)fl=.15;
+    glow2(ctx,px,py,pr*(1.9+fl*.8),'rgba(255,140,40,'+(.10+.22*fl).toFixed(3)+')');
+    ctx.fillStyle='#E8742A';
+    ctx.beginPath();ctx.ellipse(px,py,pr,pr*.82,0,0,7);ctx.fill();
+    ctx.fillStyle='#F28C38';
+    ctx.beginPath();ctx.ellipse(px,py,pr*.72,pr*.8,0,0,7);ctx.fill();
+    ctx.strokeStyle='rgba(120,50,10,.35)';ctx.lineWidth=Math.max(1,W*.003);
+    for(var rb=-1;rb<=1;rb++){ctx.beginPath();ctx.ellipse(px+rb*pr*.42,py,pr*(.55-Math.abs(rb)*.18),pr*.8,0,0,7);ctx.stroke();}
+    ctx.fillStyle='rgba(255,255,255,.06)';
+    ctx.beginPath();ctx.ellipse(px-pr*.32,py-pr*.2,pr*.28,pr*.5,-.3,0,7);ctx.fill();
+    ctx.fillStyle='#3E6B2A';rr(ctx,px-pr*.06,py-pr*.98,pr*.12,pr*.22,pr*.05);ctx.fill();
+    ctx.strokeStyle='#4E8534';ctx.lineWidth=Math.max(1.5,W*.004);
+    ctx.beginPath();ctx.moveTo(px+pr*.06,py-pr*.94);ctx.quadraticCurveTo(px+pr*.22,py-pr*1.12,px+pr*.3,py-pr*1.02);ctx.stroke();
+    var fa=.35+.65*fl;
+    ctx.save();ctx.globalAlpha=fa;
+    ctx.fillStyle='#FFD977';
+    ctx.beginPath();ctx.moveTo(px-pr*.42,py-pr*.32);ctx.lineTo(px-pr*.14,py-pr*.32);ctx.lineTo(px-pr*.28,py-pr*.55);ctx.closePath();ctx.fill();
+    ctx.beginPath();ctx.moveTo(px+pr*.14,py-pr*.32);ctx.lineTo(px+pr*.42,py-pr*.32);ctx.lineTo(px+pr*.28,py-pr*.55);ctx.closePath();ctx.fill();
+    ctx.beginPath();ctx.moveTo(px-pr*.07,py-pr*.12);ctx.lineTo(px+pr*.07,py-pr*.12);ctx.lineTo(px,py-pr*.26);ctx.closePath();ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(px-pr*.5,py+pr*.08);ctx.lineTo(px-pr*.32,py+pr*.08);ctx.lineTo(px-pr*.24,py+pr*.2);ctx.lineTo(px-pr*.1,py+pr*.08);
+    ctx.lineTo(px+pr*.02,py+pr*.2);ctx.lineTo(px+pr*.14,py+pr*.08);ctx.lineTo(px+pr*.3,py+pr*.2);ctx.lineTo(px+pr*.4,py+pr*.08);
+    ctx.lineTo(px+pr*.5,py+pr*.08);
+    ctx.quadraticCurveTo(px,py+pr*.55,px-pr*.5,py+pr*.08);ctx.closePath();ctx.fill();
+    ctx.restore();
+    glow2(ctx,px,py-pr*.1,pr*1.1,'rgba(255,190,80,'+(.12+.3*fl).toFixed(3)+')');
+    for(var sp=0;sp<4;sp++){var ph=(t*.00025+sp*.27)%1;
+      var spx=px+Math.sin(t*.0011+sp*2.4)*pr*.7,spy=py-pr*(.9+ph*.9);
+      ctx.globalAlpha=(1-ph)*.6*fl;circle(ctx,spx,spy,Math.max(1,W*.0028*(1-ph*.5)),'#FFC165');}
+    ctx.globalAlpha=1;
+  }
     if(f)f(ctx,W,H,tp);
   }
 
   // ---------- INVITATION layout ----------
+  /* Ghost Drift 小鬼飘:三只小鬼正弦漂浮+透明度呼吸 (2026-09-05) */
+  function ghostG(ctx,x,y,s,col,t){
+    ctx.fillStyle=col;
+    ctx.beginPath();
+    ctx.arc(x,y-s*.18,s,Math.PI,0);
+    var seg=4,w2=s*2/seg;
+    ctx.lineTo(x+s,y+s*.62);
+    for(var i=0;i<seg;i++){var wx=x+s-i*w2;
+      ctx.quadraticCurveTo(wx-w2*.5,y+s*.62+((i+Math.floor(t*.004))%2?s*.16:s*.28),wx-w2,y+s*.62);}
+    ctx.closePath();ctx.fill();
+    ctx.fillStyle='rgba(10,6,20,.85)';
+    ctx.beginPath();ctx.ellipse(x-s*.32,y-s*.22,s*.11,s*.16,0,0,7);ctx.fill();
+    ctx.beginPath();ctx.ellipse(x+s*.32,y-s*.22,s*.11,s*.16,0,0,7);ctx.fill();
+    ctx.beginPath();ctx.ellipse(x,y+s*.05,s*.1,s*.14,0,0,7);ctx.fill();
+  }
+  function decorGhosts(ctx,W,H,tp){
+    var t=AT||1200;
+    for(var i=0;i<12;i++){var sx=W*(.05+((i*71.3)%1)*.9),sy=H*(.05+((i*43.7)%1)*.4);
+      ctx.globalAlpha=.25+.4*Math.max(0,Math.sin(t*.0018+i*1.9));
+      circle(ctx,sx,sy,Math.max(1.2,W*.0032),'#E9E0FF');}
+    ctx.globalAlpha=1;
+    circle(ctx,W*.78,H*.16,W*.07,tp.moon);
+    circle(ctx,W*.815,H*.14,W*.062,tp.bg1);
+    batC(ctx,W*.3+Math.sin(t*.0012+2)*W*.03,H*.14+Math.sin(t*.0024)*H*.01,W*.018,'rgba(15,8,30,.8)');
+    hill(ctx,W,H,'rgba(10,5,25,.5)',.92,.45);
+    ghostG(ctx,W*.22,H*.34+Math.sin(t*.0011)*H*.022,W*.062,'rgba(243,235,255,.92)',t);
+    ghostG(ctx,W*.5,H*.26+Math.sin(t*.0009+2.2)*H*.028,W*.075,'rgba(243,235,255,.97)',t+900);
+    ghostG(ctx,W*.78,H*.4+Math.sin(t*.0013+4.1)*H*.02,W*.052,'rgba(243,235,255,.85)',t+1700);
+    glow2(ctx,W*.5,H*.3,W*.42,'rgba(185,166,255,.10)');
+    for(var gsp=0;gsp<5;gsp++){var ph=(t*.0002+gsp*.23)%1;
+      ctx.globalAlpha=(1-ph)*.4;
+      circle(ctx,W*(.1+((gsp*37.7)%1)*.8),H*(1-ph*.5),Math.max(1,W*.003),'#D9CBFF');}
+    ctx.globalAlpha=1;
+  }
+  /* Witch's Cauldron 魔药锅:绿光脉冲+气泡升腾爆裂 (2026-09-05) */
+  function decorCauldron(ctx,W,H,tp){
+    var t=AT||1200;
+    for(var i=0;i<10;i++){var sx=W*(.06+((i*67.1)%1)*.88),sy=H*(.06+((i*41.9)%1)*.3);
+      ctx.globalAlpha=.2+.35*Math.max(0,Math.sin(t*.0016+i*2.4));
+      circle(ctx,sx,sy,Math.max(1.2,W*.003),'#CFFFE0');}
+    ctx.globalAlpha=1;
+    var pulse=.5+.5*Math.sin(t*.0035);
+    glow2(ctx,W*.5,H*.62,W*(.34+pulse*.07),'rgba(124,232,162,'+(.10+.12*pulse).toFixed(3)+')');
+    hill(ctx,W,H,'rgba(0,0,0,.4)',.94,.4);
+    var cx=W*.5,cy=H*.72,cw=W*.3;
+    // legs
+    ctx.strokeStyle='#101B12';ctx.lineWidth=Math.max(2,W*.008);
+    ctx.beginPath();ctx.moveTo(cx-cw*.4,cy+cw*.18);ctx.lineTo(cx-cw*.5,cy+cw*.4);
+    ctx.moveTo(cx+cw*.4,cy+cw*.18);ctx.lineTo(cx+cw*.5,cy+cw*.4);ctx.stroke();
+    // pot
+    ctx.fillStyle='#182219';
+    ctx.beginPath();ctx.ellipse(cx,cy,cw,cw*.62,0,0,Math.PI);ctx.fill();
+    ctx.fillStyle='#22301F';
+    ctx.beginPath();ctx.ellipse(cx,cy-cw*.05,cw*1.04,cw*.14,0,0,7);ctx.fill();
+    ctx.fillStyle='#0D1A10';
+    ctx.beginPath();ctx.ellipse(cx,cy-cw*.06,cw*.92,cw*.1,0,0,7);ctx.fill();
+    // brewing liquid glow
+    glow2(ctx,cx,cy-cw*.1,cw*.6,'rgba(124,232,162,'+(.25+.25*pulse).toFixed(3)+')');
+    // bubbles: rise, wobble, pop
+    for(var b=0;b<6;b++){var ph=(t*.00042+b*.19)%1;
+      var bx=cx+Math.sin(t*.0016+b*2.7)*cw*.5*(0.35+ph*.65);
+      var by=cy-cw*.12-ph*cw*.72;
+      var br=cw*(.035+ph*.05)*(0.7+0.3*Math.sin(t*.02+b*3));
+      ctx.globalAlpha=(ph<.85?1:(1-ph)/.15)*.85;
+      ctx.strokeStyle='#8FF2B0';ctx.lineWidth=Math.max(1,W*.0022);
+      circle(ctx,bx,by,br,'rgba(143,242,176,.30)');
+      ctx.beginPath();ctx.arc(bx,by,br,0,7);ctx.stroke();}
+    ctx.globalAlpha=1;
+    // ladle + sparkles
+    ctx.strokeStyle='#101B12';ctx.lineWidth=Math.max(1.5,W*.004);
+    ctx.beginPath();ctx.moveTo(cx+cw*.72,cy-cw*.5);ctx.lineTo(cx+cw*.28,cy-cw*.12);ctx.stroke();
+    circle(ctx,cx+cw*.28,cy-cw*.12,cw*.08,'#22301F');
+    for(var sp=0;sp<4;sp++){var sph=(t*.0003+sp*.29)%1;
+      ctx.globalAlpha=(1-sph)*.5*pulse+.15;
+      circle(ctx,cx+(Math.sin(t*.0012+sp*2.2))*cw*.7,cy-cw*(.3+sph*.7),Math.max(1,W*.0026),'#CFFFE0');}
+    ctx.globalAlpha=1;
+  }
+  /* Starfall 星夜流星:群星眨眼+周期流星+山影 (2026-09-05) */
+  function decorStarfall(ctx,W,H,tp){
+    var t=AT||1200;
+    for(var i=0;i<22;i++){var sx=W*(.03+((i*83.7)%1)*.94),sy=H*(.04+((i*29.3)%1)*.55);
+      var tw=.2+.55*Math.max(0,Math.sin(t*.0019+i*2.63));
+      ctx.globalAlpha=tw;circle(ctx,sx,sy,Math.max(1.1,W*.003*(0.7+tw*.6)),'#EAF2FF');}
+    ctx.globalAlpha=1;
+    // shooting star every ~4s
+    var cyc=(t*.00025)%1, scy=H*(.12+((Math.floor(t*.00025))%3)*.09);
+    var scx=W*(1.05-cyc*1.25);
+    ctx.globalAlpha=Math.sin(cyc*Math.PI)*.9;
+    ctx.strokeStyle='#FFF3C4';ctx.lineWidth=Math.max(1.2,W*.0028);ctx.lineCap='round';
+    ctx.beginPath();ctx.moveTo(scx,scy);ctx.lineTo(scx+W*.09,scy-W*.028);ctx.stroke();
+    circle(ctx,scx,scy,Math.max(1.4,W*.004),'#FFFDF2');
+    ctx.globalAlpha=1;
+    // big crescent moon
+    glow2(ctx,W*.8,H*.17,W*.3,'rgba(255,243,196,.16)');
+    circle(ctx,W*.8,H*.17,W*.085,tp.moon);
+    circle(ctx,W*.838,H*.15,W*.074,tp.bg1);
+    batC(ctx,W*.36+Math.sin(t*.001)*W*.02,H*.2+Math.sin(t*.0022)*H*.01,W*.017,'rgba(8,14,30,.85)');
+    // hills + cabin
+    hill(ctx,W,H,'rgba(6,12,30,.55)',.88,.5);
+    hill(ctx,W,H,'rgba(3,7,20,.7)',.95,.3);
+    house(ctx,W*.22,H*.93,W*.14,H*.1,'#050C1E');
+    circle(ctx,W*.245,H*.9,W*.006,'rgba(255,209,102,'+(.5+.4*Math.sin(t*.006)).toFixed(3)+')');
+  }
+  /* Candlelight 烛光摇曳:三支蜡烛火苗摆动+暖光呼吸 (2026-09-05) */
+  function decorCandle(ctx,W,H,tp){
+    var t=AT||1200;
+    for(var i=0;i<9;i++){var sx=W*(.05+((i*77.7)%1)*.9),sy=H*(.06+((i*31.7)%1)*.32);
+      ctx.globalAlpha=.18+.3*Math.max(0,Math.sin(t*.0015+i*2.2));
+      circle(ctx,sx,sy,Math.max(1.1,W*.0028),'#FFEDD5');}
+    ctx.globalAlpha=1;
+    var candles=[[W*.24,H*.9,W*.045],[W*.5,H*.93,W*.058],[W*.76,H*.9,W*.045]];
+    for(var c=0;c<3;c++){
+      var cx=candles[c][0],cy=candles[c][1],cw=candles[c][2];
+      var fl=.6+.4*Math.sin(t*.013+c*2.4)+.18*Math.sin(t*.031+c*1.3);if(fl<.25)fl=.25;
+      glow2(ctx,cx,cy-cw*1.7,cw*(3.4+fl*1.3),'rgba(255,170,60,'+(.10+.16*fl).toFixed(3)+')');
+      // body
+      ctx.fillStyle=c%2?'#E8D5B5':'#F2E3C8';
+      rr(ctx,cx-cw*.5,cy-cw*1.3,cw,cw*1.3,cw*.14);ctx.fill();
+      ctx.fillStyle='rgba(120,80,40,.25)';
+      rr(ctx,cx+cw*.12,cy-cw*1.3,cw*.16,cw*1.3,cw*.08);ctx.fill();
+      // wick
+      ctx.strokeStyle='#5B4226';ctx.lineWidth=Math.max(1,W*.0022);
+      ctx.beginPath();ctx.moveTo(cx,cy-cw*1.3);ctx.lineTo(cx,cy-cw*1.42);ctx.stroke();
+      // flame (teardrop, wobbles)
+      var fx=Math.sin(t*.011+c*2.4)*cw*.09,fh=cw*(.5+fl*.28);
+      ctx.fillStyle='#FFC978';
+      ctx.beginPath();ctx.moveTo(cx-fx-cw*.2,cy-cw*1.38);
+      ctx.quadraticCurveTo(cx-fx-cw*.26,cy-cw*1.38-fh*.55,cx-fx*1.4,cy-cw*1.38-fh);
+      ctx.quadraticCurveTo(cx-fx+cw*.26,cy-cw*1.38-fh*.55,cx-fx+cw*.2,cy-cw*1.38);
+      ctx.closePath();ctx.fill();
+      ctx.fillStyle='#FFF3D6';
+      ctx.beginPath();ctx.ellipse(cx-fx*.7,cy-cw*1.38-fh*.32,cw*.09,fh*.3,0,0,7);ctx.fill();
+    }
+    // drifting smoke wisps
+    for(var sm=0;sm<3;sm++){var sph=(t*.00022+sm*.4)%1;
+      ctx.globalAlpha=(1-sph)*.28;
+      circle(ctx,candles[1][0]+Math.sin(t*.0018+sm*2.6)*W*.03,candles[1][1]-candles[1][2]*(1.9+sph*2.2),W*.006*(1+sph),'rgba(255,237,213,.8)');}
+    ctx.globalAlpha=1;
+  }
+
   function drawInvite(ctx,W,H,tp){
     decorFor(ctx,W,H,tp);
     var DISP=D(),disp=function(sz){return 'normal '+sz+'px '+DISP};
@@ -980,10 +1189,12 @@
 
   var SIZE_MAP={square:[1080,1080,'1:1 · 1080×1080'],story:[1080,1920,'9:16 · 1080×1920'],print:[1500,2100,'5×7 · 1500×2100']};
   function render(){
-    var pv=$id('pv'),dim=SIZE_MAP[SIZE];pv.width=dim[0];pv.height=dim[1];
+    var pv=$id('pv'),dim=SIZE_MAP[SIZE];
+    if(pv.width!==dim[0]||pv.height!==dim[1]){pv.width=dim[0];pv.height=dim[1];}
     $id('pvLabel').textContent=dim[2];
     var ctx=pv.getContext('2d');ctx.clearRect(0,0,pv.width,pv.height);
     var tp=tpl();
+    $id('btnGif').style.display=tp.anim?'':'none';
     if(MODE==='invite')drawInvite(ctx,pv.width,pv.height,tp);else drawBoo(ctx,pv.width,pv.height,tp);
   }
 
@@ -999,16 +1210,109 @@
   }
   function dataURL(){return $id('pv').toDataURL('image/png')}
   $id('btnDl').addEventListener('click',function(){var a=document.createElement('a');a.download='halloween-'+MODE+'-'+TPL+'-'+SIZE+'.png';a.href=dataURL();document.body.appendChild(a);a.click();a.remove();});
+  /* ---------- 动图导出:逐帧渲染 + omggif 编码 (2026-09-05) ---------- */
+  function quantize(rgba,w,h){
+    var BK=32,pop=new Uint32Array(BK*BK*BK),avg=new Float64Array(BK*BK*BK*3);
+    var idx=function(r,g,b){return (r>>3)*BK*BK+(g>>3)*BK+(b>>3);};
+    var N=w*h;
+    for(var i=0;i<N;i++){var k=idx(rgba[i*4],rgba[i*4+1],rgba[i*4+2]);pop[k]++;avg[k*3]+=rgba[i*4];avg[k*3+1]+=rgba[i*4+1];avg[k*3+2]+=rgba[i*4+2];}
+    var b=[];for(var i2=0;i2<pop.length;i2++)if(pop[i2])b.push(i2);
+    b.sort(function(x,c){return pop[c]-pop[x];});if(b.length>255)b.length=255;
+    var pal=[],map=new Int32Array(pop.length).fill(-1);
+    for(var i3=0;i3<b.length;i3++){var k3=b[i3],n=pop[k3];map[k3]=i3;pal.push((Math.round(avg[k3*3]/n)<<16)|(Math.round(avg[k3*3+1]/n)<<8)|Math.round(avg[k3*3+2]/n));}
+    var tg=2;while(tg<pal.length)tg<<=1;if(tg>256)tg=256;
+    while(pal.length<tg)pal.push(0xffffff);
+    var indexed=new Uint8Array(N);
+    for(var i4=0;i4<N;i4++){var k4=idx(rgba[i4*4],rgba[i4*4+1],rgba[i4*4+2]),d=map[k4];
+      if(d!==-1){indexed[i4]=d;continue;}
+      var c=(rgba[i4*4]<<16)|(rgba[i4*4+1]<<8)|rgba[i4*4+2],bd=Infinity,bi=0;
+      for(var p=0;p<pal.length;p++){var pc=pal[p],dr=((c>>16)&255)-((pc>>16)&255),dg=((c>>8)&255)-((pc>>8)&255),db=(c&255)-(pc&255),dd=dr*dr+dg*dg+db*db;if(dd<bd){bd=dd;bi=p;}}
+      indexed[i4]=bi;}
+    return {palette:pal,indexed:indexed};
+  }
+  function encodeGIF(){return new Promise(function(resolve,reject){
+    var tp=tpl();if(!tp.anim){reject(new Error('not animated'));return;}
+    setTimeout(function(){
+    try{
+      var dim=SIZE_MAP[SIZE],W=dim[0],H=dim[1];
+      var s=Math.min(1,640/Math.max(W,H));W=Math.round(W*s);H=Math.round(H*s);
+      var off=document.createElement('canvas');off.width=W;off.height=H;
+      var g=off.getContext('2d',{willReadFrequently:true});
+      var FR=16,DL=80,keep=AT,bufs=[];
+      for(var i=0;i<FR;i++){AT=1200+i*DL;
+        if(MODE==='invite')drawInvite(g,W,H,tp);else drawBoo(g,W,H,tp);
+        bufs.push(g.getImageData(0,0,W,H).data.slice());}
+      AT=keep;
+      var q0=quantize(bufs[0],W,H),pal=q0.palette;
+      var est=1024+bufs.length*(W*H*6),buf=new Uint8Array(est);
+      var gif=new GifWriter(buf,W,H,{loop:0,palette:pal});
+      function mapToPal(rgba){
+        var idx2=new Uint8Array(W*H),cache=new Map();
+        for(var p=0;p<W*H;p++){
+          var c=(rgba[p*4]<<16)|(rgba[p*4+1]<<8)|rgba[p*4+2],hit=cache.get(c);
+          if(hit!==undefined){idx2[p]=hit;continue;}
+          var bd=Infinity,bi=0;
+          for(var g2=0;g2<pal.length;g2++){var gc=pal[g2],dr=((c>>16)&255)-((gc>>16)&255),dg=((c>>8)&255)-((gc>>8)&255),db=(c&255)-(gc&255),dd=dr*dr+dg*dg+db*db;if(dd<bd){bd=dd;bi=g2;}}
+          cache.set(c,bi);idx2[p]=bi;}
+        return idx2;}
+      for(var fi=0;fi<bufs.length;fi++){
+        var indexed=(fi===0)?q0.indexed:mapToPal(bufs[fi]);
+        gif.addFrame(0,0,W,H,indexed,{palette:pal,delay:DL/10});}
+      var len=gif.end();
+      resolve(new Blob([buf.subarray(0,len)],{type:'image/gif'}));
+    }catch(e){reject(e);}
+    },30);});
+  }
+  $id('btnGif').addEventListener('click',function(){
+    var btn=$id('btnGif'),old=btn.textContent;btn.textContent='⏳ Encoding…';btn.disabled=true;
+    encodeGIF().then(function(blob){
+      var a=document.createElement('a');a.download='halloween-'+MODE+'-'+TPL+'-animated.gif';
+      a.href=URL.createObjectURL(blob);document.body.appendChild(a);a.click();a.remove();
+      btn.textContent='GIF ✓ '+Math.round(blob.size/1024)+' KB';
+      setTimeout(function(){btn.textContent=old;btn.disabled=false;},1600);
+    }).catch(function(e){btn.textContent='GIF failed';console.error(e);setTimeout(function(){btn.textContent=old;btn.disabled=false;},2000);});
+  });
+  /* ---------- 卡片本体直发:Web Share API Level 2(图/GIF 文件直达原生分享面板)---------- */
+  $id('btnShare').addEventListener('click',function(){
+    var btn=$id('btnShare'),old=btn.textContent;btn.textContent='⏳ Preparing…';btn.disabled=true;
+    var tp=tpl();
+    var getBlob=tp.anim?encodeGIF():new Promise(function(res){$id('pv').toBlob(res,'image/png')});
+    getBlob.then(function(blob){
+      var name=blob.type==='image/gif'?'halloween-invite.gif':'halloween-invite.png';
+      var file=new File([blob],name,{type:blob.type});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        return navigator.share({files:[file],title:"You're invited! 🎃",text:CAP}).then(function(){
+          btn.textContent='Shared ✓';});
+      }
+      /* 桌面降级:自动下载卡片 + 打开分享窗 + 文案已在下方可复制 */
+      var a=document.createElement('a');a.download=name;a.href=URL.createObjectURL(blob);
+      document.body.appendChild(a);a.click();a.remove();
+      window.open(NETS.x.replace('{t}',encodeURIComponent(CAP)).replace('{u}',encodeURIComponent(URL)),'_blank','noopener');
+      btn.textContent='Saved ✓ attach it';
+    }).catch(function(e){if(!e||e.name!=='AbortError')console.error(e);})
+      .then(function(){setTimeout(function(){btn.textContent=old;btn.disabled=false;},1500);});
+  });
+  $id('btnCopyImg').addEventListener('click',function(){
+    var btn=$id('btnCopyImg'),old=btn.textContent;
+    try{$id('pv').toBlob(function(b){
+      if(!b){btn.textContent='Copy failed';return;}
+      navigator.clipboard.write([new ClipboardItem({'image/png':b})]).then(function(){
+        btn.textContent='Copied ✓ paste it';setTimeout(function(){btn.textContent=old;},1600);
+      }).catch(function(){btn.textContent='Use Download instead';setTimeout(function(){btn.textContent=old;},1800);});
+    });}catch(e){btn.textContent='Use Download instead';setTimeout(function(){btn.textContent=old;},1800);}
+  });
   $id('btnPrint').addEventListener('click',function(){
     var c=document.createElement('canvas');c.width=1500;c.height=2100;
     var cx=c.getContext('2d'),tp=tpl();
+    AT=1200; /* 打印导出取稳定帧 */
     if(MODE==='invite')drawInvite(cx,1500,2100,tp);else drawBoo(cx,1500,2100,tp);
     var img=$id('printImg');img.src=c.toDataURL('image/png');
     img.onload=function(){window.print()};});
   var URL='https://aiharryone.github.io/trendsnap/';
-  var CAP='🎃 I made a free Halloween invite in my browser — 7 templates, no login, nothing uploaded: '+URL;
+  var CAP='🎃 I made a free animated Halloween invite in my browser — 25 templates, no login, nothing uploaded: '+URL;
   var NETS={x:'https://twitter.com/intent/tweet?text={t}&url={u}',wa:'https://wa.me/?text={t}%20{u}',
-    fb:'https://www.facebook.com/sharer/sharer.php?u={u}',reddit:'https://www.reddit.com/submit?url={u}&title={t}',tg:'https://t.me/share/url?url={u}&text={t}'};
+    fb:'https://www.facebook.com/sharer/sharer.php?u={u}',reddit:'https://www.reddit.com/submit?url={u}&title={t}',tg:'https://t.me/share/url?url={u}&text={t}',
+    li:'https://www.linkedin.com/sharing/share-offsite/?url={u}',em:'mailto:?subject={t}&body={t}%20{u}'};
   document.querySelectorAll('.sharebtn').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();
     window.open(NETS[a.dataset.net].replace('{t}',encodeURIComponent(CAP)).replace('{u}',encodeURIComponent(URL)),'_blank','noopener');});});
   $id('btnCopy').addEventListener('click',function(){var inp=$id('capText');inp.select();var done=function(){var b=$id('btnCopy'),o=b.textContent;b.textContent='Copied ✓';setTimeout(function(){b.textContent=o},1200);};
@@ -1043,7 +1347,7 @@
     $id('countN').textContent=days+'d '+h+'h '+m+'m '+s+'s';}
   tick();setInterval(tick,1000);
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!reduce){makeAmb();requestAnimationFrame(loop)}
+  if(!reduce){makeAmb();requestAnimationFrame(loop);requestAnimationFrame(pvLoop)}
   requestAnimationFrame(function(){document.body.classList.add('ready');setTimeout(function(){document.body.classList.add('settled')},900)});
   setTimeout(function(){if(!document.body.classList.contains('ready'))document.body.classList.add('ready','settled')},2600);
   var qp=new URLSearchParams(location.search);var tv=qp.get("t");if(tv&&TEMPLATES[tv]){TPL=tv;sync($id("tplSel"),function(d){return d===TPL});}

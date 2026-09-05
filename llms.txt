@@ -1,14 +1,16 @@
 # TrendSnap
 
-> Free seasonal event tools that run 100% in your browser. Start with the Halloween Invitation Maker: 20 hand-drawn illustrated templates, live preview, and export in three sizes (1:1 square, 9:16 story, 5×7 print). No signup, no watermark, nothing uploaded — every card is drawn locally on canvas.
+> Free seasonal event tools that run 100% in your browser. Start with the Halloween Invitation Maker: 25 hand-drawn illustrated templates — 5 of them animated (flickering jack-o'-lantern, floating ghosts, bubbling witch's cauldron, shooting stars, swaying candlelight) — with live preview and export as still PNG or looping animated GIF in three sizes (1:1 square, 9:16 story, 5×7 print). No signup, no watermark, nothing uploaded — every card is drawn locally on canvas.
 
 ## Tools
 
-- [Halloween Invitation & Boo Basket Tag Maker](https://aiharryone.github.io/trendsnap/halloween-invite.html): make a free Halloween 2026 party invitation or a "You've been BOO'd!" neighbourhood gift tag from 20 hand-drawn templates. Editable title, date, time and place with live preview; one-click native share on mobile, PNG download on desktop.
+- [Halloween Invitation & Boo Basket Tag Maker](https://aiharryone.github.io/trendsnap/halloween-invite.html): make a free Halloween 2026 party invitation or a "You've been BOO'd!" neighbourhood gift tag from 25 hand-drawn templates. Editable title, date, time and place with live preview; one-click share to X, WhatsApp, Facebook, Reddit, Telegram, LinkedIn or email; PNG download on desktop and looping GIF export for the animated templates.
 
-## 20 Hand-Drawn Templates
+## 25 Hand-Drawn Templates (5 Animated)
 
-Classic · Witch · Retro · Vintage · Modern · Minimal · Kawaii · Pumpkin Patch · Haunted Forest · Jack Light · Violet Witch · Wicked Night · Big Pumpkin · Glow Jack · Orange Sky · Ember Frame · Masquerade · Moon & Bats · Haunted House · Web Corner
+Animated: Flicker (jack-o'-lantern with flickering candle glow) · Ghost Drift (floating ghosts) · Witch's Cauldron (rising bubbles) · Starfall (twinkling stars and shooting stars) · Candlelight (swaying flames)
+
+Still: Classic · Witch · Retro · Vintage · Modern · Minimal · Kawaii · Pumpkin Patch · Haunted Forest · Jack Light · Violet Witch · Wicked Night · Big Pumpkin · Glow Jack · Orange Sky · Ember Frame · Masquerade · Moon & Bats · Haunted House · Web Corner
 
 Template styles range from cute (Kawaii, Pumpkin Patch, Big Pumpkin) to spooky (Haunted House, Haunted Forest, Web Corner) and elegant (Masquerade, Violet Witch, Wicked Night), so the same maker fits kids' parties, adult gatherings and classroom events.
 
