@@ -1025,9 +1025,20 @@
       circle(ctx,W*(.1+((gsp*37.7)%1)*.8),H*(1-ph*.5),Math.max(1,W*.003),'#D9CBFF');}
     ctx.globalAlpha=1;
   }
-  /* Witch's Cauldron 魔药锅:绿光脉冲+气泡升腾爆裂 (2026-09-05) */
+  /* Witch's Cauldron 魔药锅:绿光脉冲+气泡升腾爆裂+顶部飞天女巫 (2026-09-05) */
   function decorCauldron(ctx,W,H,tp){
     var t=AT||1200;
+    // 飞天女巫(顶部来回飘)
+    var wx=W*.5+Math.sin(t*.0004)*W*.33, wy=H*.115+Math.sin(t*.0013)*H*.018, ws=W*.045;
+    var wc='rgba(10,20,14,.78)';
+    ctx.strokeStyle=wc;ctx.lineWidth=Math.max(1.5,W*.004);ctx.lineCap='round';
+    ctx.beginPath();ctx.moveTo(wx-ws*1.15,wy+ws*.4);ctx.lineTo(wx+ws*.35,wy-ws*.22);ctx.stroke();
+    ctx.lineWidth=Math.max(1,W*.003);
+    for(var br=0;br<4;br++){ctx.beginPath();ctx.moveTo(wx-ws*1.15,wy+ws*.4);ctx.lineTo(wx-ws*(1.35+br*.1),wy+ws*(.22+br*.12));ctx.stroke();}
+    ctx.fillStyle=wc;
+    ctx.beginPath();ctx.ellipse(wx-ws*.15,wy+ws*.05,ws*.42,ws*.28,-.35,0,7);ctx.fill();
+    ctx.beginPath();ctx.arc(wx+ws*.28,wy-ws*.38,ws*.24,0,7);ctx.fill();
+    ctx.beginPath();ctx.moveTo(wx+ws*.02,wy-ws*.48);ctx.lineTo(wx+ws*.56,wy-ws*.48);ctx.lineTo(wx+ws*.3,wy-ws*.95);ctx.closePath();ctx.fill();
     for(var i=0;i<10;i++){var sx=W*(.06+((i*67.1)%1)*.88),sy=H*(.06+((i*41.9)%1)*.3);
       ctx.globalAlpha=.2+.35*Math.max(0,Math.sin(t*.0016+i*2.4));
       circle(ctx,sx,sy,Math.max(1.2,W*.003),'#CFFFE0');}
@@ -1238,7 +1249,7 @@
     var btn=$id('btnDl'),old=btn.textContent;btn.textContent='⏳ Encoding…';btn.disabled=true;
     encodeGIF().then(function(blob){
       var a2=document.createElement('a');a2.download='halloween-'+MODE+'-'+TPL+'-animated.gif';
-      a2.href=URL.createObjectURL(blob);document.body.appendChild(a2);a2.click();a2.remove();
+      a2.href=window.URL.createObjectURL(blob);document.body.appendChild(a2);a2.click();a2.remove();
       btn.textContent='GIF ✓ '+Math.round(blob.size/1024)+' KB';
       setTimeout(function(){btn.textContent=old;btn.disabled=false;},1600);
     }).catch(function(e){console.error(e);btn.textContent=old;btn.disabled=false;});
@@ -1310,7 +1321,7 @@
           btn.textContent='Shared ✓';});
       }
       /* 桌面降级:自动下载卡片 + 打开分享窗 + 文案已在下方可复制 */
-      var a=document.createElement('a');a.download=name;a.href=URL.createObjectURL(blob);
+      var a=document.createElement('a');a.download=name;a.href=window.URL.createObjectURL(blob);
       document.body.appendChild(a);a.click();a.remove();
       window.open(NETS.x.replace('{t}',encodeURIComponent(CAP)).replace('{u}',encodeURIComponent(URL)),'_blank','noopener');
       btn.textContent='Saved ✓ attach it';
