@@ -6,16 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="msvalidate.01" content="E62785F51D89A3BD3AFBB2BC2BB07BF9">
 <title>Halloween Invitation Maker 2026 – Free Party Invite &amp; Boo Basket Tag (In Browser)</title>
-<meta name="description" content="Make a free Halloween 2026 party invitation or 'You've been BOO'd' basket tag in your browser. Pick from 25 spooky templates — 5 animated: glowing pumpkins, floating ghosts, bubbling cauldrons — add party details, download PNG or looping GIF, or print 5×7. Nothing uploaded, no login.">
+<meta name="description" content="Make a free Halloween 2026 party invitation or 'You've been BOO'd' basket tag in your browser. Pick from 30 spooky templates — 10 animated: glowing pumpkins, floating ghosts, bubbling cauldrons — in 6 languages (EN, 繁中, 简中, ES, 日本語, FR). Add party details, download PNG or looping GIF, or print 5×7. Nothing uploaded, no login.">
 <meta property="og:title" content="Halloween Invitation Maker 2026 – Free Party Invite &amp; Boo Tag">
-<meta property="og:description" content="25 spooky invite &amp; Boo-basket tag templates — 5 animated — made in your browser. No login, nothing uploaded. Download PNG or looping GIF, or print 5×7.">
+<meta property="og:description" content="30 spooky invite &amp; Boo-basket tag templates — 10 animated — in 6 languages, made in your browser. No login, nothing uploaded. Download PNG or looping GIF, or print 5×7.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aiharryone.github.io/trendsnap/halloween-invite.html">
 <meta property="og:image" content="https://aiharryone.github.io/trendsnap/assets/halloween-invite-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Halloween Invitation Maker 2026 – Free">
-<meta name="twitter:description" content="25 spooky invite templates — 5 animated — in your browser. No login, nothing uploaded.">
+<meta name="twitter:description" content="30 spooky invite templates — 10 animated — in 6 languages, in your browser. No login, nothing uploaded.">
 <link rel="canonical" href="https://aiharryone.github.io/trendsnap/halloween-invite.html">
+<link rel="alternate" hreflang="en" href="https://aiharryone.github.io/trendsnap/halloween-invite.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://aiharryone.github.io/trendsnap/halloween-invite.html?lang=zhHant">
+<link rel="alternate" hreflang="zh-Hans" href="https://aiharryone.github.io/trendsnap/halloween-invite.html?lang=zhHans">
+<link rel="alternate" hreflang="es" href="https://aiharryone.github.io/trendsnap/halloween-invite.html?lang=es">
+<link rel="alternate" hreflang="ja" href="https://aiharryone.github.io/trendsnap/halloween-invite.html?lang=ja">
+<link rel="alternate" hreflang="fr" href="https://aiharryone.github.io/trendsnap/halloween-invite.html?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://aiharryone.github.io/trendsnap/halloween-invite.html">
 <script type="application/ld+json">
 [{"@context":"https://schema.org","@type":"WebPage","name":"Halloween Invitation Maker 2026","datePublished":"2026-09-03","dateModified":"2026-09-10","inLanguage":["en","zh-Hant","zh-Hans","es","ja","fr"],"description":"Free in-browser Halloween 2026 party invitation and Boo-basket tag maker: 30 templates, 10 animated, in 6 languages. No login, nothing uploaded."},
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -62,12 +69,27 @@
   .navlinks a:hover{color:#fff}.navlinks a:hover::after{opacity:1}
   .navlinks a.active{background:#fff;color:#1B1130;box-shadow:0 6px 18px -6px rgba(255,255,255,.5)}
   .navlinks a.active::after{display:none}
+  /* 全站语言切换器(2026-09-10:从卡片面板移到导航栏,整页跟着切) */
+  .langpick{display:flex;align-items:center;gap:5px;padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.3);
+    border:1px solid var(--panel-border);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;transition:color .3s var(--e)}
+  .langpick:hover{color:#fff}
+  .langpick select{appearance:none;-webkit-appearance:none;-moz-appearance:none;border:0;background:transparent;color:#fff;
+    font:inherit;font-weight:700;font-size:13px;cursor:pointer;outline:none;padding:0 2px;max-width:118px}
+  .langpick select option{background:#1B1130;color:#fff}
+  @media (max-width:600px){
+    .navlinks a{padding:8px 9px;font-size:12px;letter-spacing:0}
+    .navlinks a.active{display:none}   /* 当前页链接占地方,"工具"留着就够 */
+    .langpick{padding:5px 7px;gap:3px}
+    .langpick select{font-size:12px;max-width:84px}
+  }
+  /* 超窄屏:导航只留 logo + 语言选择器(保证语言切换永远可见) */
+  @media (max-width:420px){.navlinks a{display:none}}
   .logo{font-weight:800;font-size:18px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px}
   .logo .chip{width:30px;height:30px;border-radius:10px;background:linear-gradient(180deg,#FFB45E,#EA580C);
     display:grid;place-items:center;box-shadow:0 4px 12px -3px rgba(255,138,42,.7);font-size:15px}
   .brand{position:absolute;left:50%;top:70%;transform:translateX(-50%);z-index:1;pointer-events:none;
-    font-family:Impact,'Arial Black',sans-serif;font-size:clamp(90px,19vw,250px);color:rgba(255,255,255,.028);
-    white-space:nowrap;user-select:none}
+    font-family:Impact,'Arial Black',sans-serif;font-size:clamp(56px,19vw,250px);color:rgba(255,255,255,.028);
+    white-space:nowrap;user-select:none;max-width:100vw;overflow:hidden}
   .hero{padding:48px 0 12px;text-align:center}
   .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 16px;border-radius:999px;font-weight:700;
     font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#FFD9B0;background:rgba(255,138,42,.14);
@@ -82,8 +104,9 @@
   .answer{margin:22px auto 0;max-width:860px;text-align:left;border-left:4px solid var(--pumpkin);
     background:var(--panel);border-radius:0 var(--r) var(--r) 0;padding:15px 20px;line-height:1.55;font-size:14.5px}
   .answer b{color:#FFC99A}
-  .stage{display:grid;grid-template-columns:390px 1fr;gap:22px;align-items:start;margin:26px 0 8px}
-  @media(max-width:880px){.stage{grid-template-columns:1fr}}
+  .stage{display:grid;grid-template-columns:390px minmax(0,1fr);gap:22px;align-items:start;margin:26px 0 8px}
+  /* 2026-09-10 修:1fr=minmax(auto,1fr) 会被 canvas 固有宽度(1080)撑爆,手机上整页被切 */
+  @media(max-width:880px){.stage{grid-template-columns:minmax(0,1fr)}.stage>*{min-width:0}}
   .panel{background:var(--panel);border:1px solid var(--panel-border);border-radius:var(--r);padding:18px;
     backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
   .panel h3{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:14px 0 8px}
@@ -170,14 +193,25 @@
 <nav>
   <a class="logo" href="index.html"><span class="chip">⚡</span>TrendSnap</a>
   <div class="navlinks">
-    <a href="index.html#tools">Tools</a>
-    <a class="active" href="halloween-invite.html">Halloween Invite</a>
+    <a href="index.html#tools" data-i18n="navTools">Tools</a>
+    <a class="active" href="halloween-invite.html" data-i18n="navInvite">Halloween Invite</a>
+    <label class="langpick" title="Language / 语言 / 言語 / Idioma / Langue">
+      <span aria-hidden="true">🌐</span>
+      <select id="langSel" aria-label="Language">
+        <option value="en">English</option>
+        <option value="zhHant">繁體中文</option>
+        <option value="zhHans">简体中文</option>
+        <option value="es">Español</option>
+        <option value="ja">日本語</option>
+        <option value="fr">Français</option>
+      </select>
+    </label>
   </div>
 </nav>
 
 <div class="wrap">
   <div class="hero enter d1">
-    <span class="eyebrow">🎃 Next up: Halloween 2026</span>
+    <span class="eyebrow" data-i18n="eyebrow">🎃 Next up: Halloween 2026</span>
     <h1 id="heroH1" data-i18n-html="heroH1">Make a <span class="accent">Free Halloween Invitation</span> — right in your browser</h1>
     <p class="sub" id="subline" data-i18n-html="sub">Pick one of <b>30 spooky templates — 10 of them animated</b>, type your party details, then <b>download a PNG or looping GIF for WhatsApp / Instagram</b> or <b>print a 5×7 card</b>. No login, nothing uploaded.</p>
     <p id="count"><span id="countPre" data-i18n="countPre">Halloween in </span><b id="countN">…</b> · Sat, Oct 31 2026</p>
@@ -189,14 +223,6 @@
   <div class="stage enter d2">
     <div class="panel">
       <h3 data-i18n="lblMode">Card type</h3>
-      <div class="langbar seg" id="langbar" style="margin-bottom:12px">
-        <button data-lang="en" class="on">EN</button>
-        <button data-lang="zhHant">繁體</button>
-        <button data-lang="zhHans">简体</button>
-        <button data-lang="es">ES</button>
-        <button data-lang="ja">日本語</button>
-        <button data-lang="fr">FR</button>
-      </div>
       <div class="seg" id="modeSeg">
         <button data-mode="invite" class="on">🎉 Invitation</button>
         <button data-mode="boo">👻 Boo-basket tag</button>
@@ -330,6 +356,7 @@
     heroH1:'Make a <span class="accent">Free Halloween Invitation</span> — right in your browser',
     sub:'Pick one of <b>30 spooky templates — 10 of them animated</b>, type your party details, then <b>download a PNG or looping GIF for WhatsApp / Instagram</b> or <b>print a 5×7 card</b>. No login, nothing uploaded.',
     countPre:'Halloween in ',
+    eyebrow:'🎃 Next up: Halloween 2026',navTools:'Tools',navInvite:'Halloween Invite',langLabel:'Language',
     answer:'<b>What is this?</b> A free Halloween 2026 party invitation &amp; "You\'ve been BOO\'d!" basket-tag maker that runs 100% in your browser. 30 styles — 10 animated (a haunted Goya etching, neon nightmare, golden séance, paper-cut woods, pop-art spook, glowing pumpkin, floating ghosts, bubbling cauldron, starfall, candlelight) plus Classic, Witch, Retro, Vintage, Modern, Minimal, Kawaii, Pumpkin Patch, Haunted Forest and more — for adult parties, kids\' parties and everything between.',
     lblMode:'Card type',modeInvite:'🎉 Invitation',modeBoo:'👻 Boo-basket tag',sizeSquare:'1:1 Square',sizeStory:'9:16 Story',sizePrint:'5×7 Print',lblTpl:'Template · 30 styles',lblSize:'Canvas size',lblDl:'Download',lblShareTool:'Share this free tool',
     fParty:'Party title',fHost:'Hosted by (optional)',fDate:'Date',fTime:'Time',fPlace:'Location',fRsvp:'RSVP line',fNote:'Extra note (optional)',
@@ -363,6 +390,7 @@
     heroH1:'免費製作<span class="accent">萬聖節邀請卡</span>——全在瀏覽器完成',
     sub:'從 <b>30 款搞怪範本——其中 10 款動態</b>挑一款，輸入派對資訊，就能<b>下載 PNG 或循環 GIF 傳到 WhatsApp / Instagram</b>，或<b>列印 5×7 卡片</b>。免登入、不上傳任何資料。',
     countPre:'距離萬聖節還有 ',
+    eyebrow:'🎃 下一站：2026 萬聖節',navTools:'工具',navInvite:'萬聖邀請卡',langLabel:'語言',
     answer:'<b>這是什麼？</b>完全在瀏覽器裡執行的免費 2026 萬聖節派對邀請卡與「你被 Boo 了！」提籃標籤產生器。30 種風格——10 種動態（妖異蝕刻、霓虹噩夢、黑金降靈會、剪紙怖林、波普驚魂、發光南瓜、小鬼飄浮、冒泡魔藥鍋、星夜流星、燭光搖曳），另有經典、女巫、復古、現代、極簡、卡哇伊、南瓜園、鬧鬼森林等——大人派對、小孩派對都適合。',
     lblMode:'卡片類型',modeInvite:'🎉 邀請卡',modeBoo:'👻 Boo 提籃標籤',sizeSquare:'1:1 方形',sizeStory:'9:16 限時動態',sizePrint:'5×7 列印',lblTpl:'範本 · 30 款',lblSize:'畫布尺寸',lblDl:'下載',lblShareTool:'分享這個免費工具',
     fParty:'派對標題',fHost:'主辦人（選填）',fDate:'日期',fTime:'時間',fPlace:'地點',fRsvp:'回覆方式',fNote:'備註（選填）',
@@ -396,6 +424,7 @@
     heroH1:'免费制作<span class="accent">万圣节邀请卡</span>——全在浏览器完成',
     sub:'从 <b>30 款搞怪模板——其中 10 款动态</b>挑一款，输入派对信息，就能<b>下载 PNG 或循环 GIF 发到 WhatsApp / Instagram</b>，或<b>打印 5×7 卡片</b>。免登录、不上传任何数据。',
     countPre:'距离万圣节还有 ',
+    eyebrow:'🎃 下一站：2026 万圣节',navTools:'工具',navInvite:'万圣邀请卡',langLabel:'语言',
     answer:'<b>这是什么？</b>完全在浏览器里运行的免费 2026 万圣节派对邀请卡与「你被 Boo 了！」提篮标签生成器。30 种风格——10 种动态（妖异蚀刻、霓虹噩梦、黑金降灵会、剪纸怖林、波普惊魂、发光南瓜、小鬼飘浮、冒泡魔药锅、星夜流星、烛光摇曳），另有经典、女巫、复古、现代、极简、卡哇伊、南瓜园、闹鬼森林等——大人派对、小孩派对都适合。',
     lblMode:'卡片类型',modeInvite:'🎉 邀请卡',modeBoo:'👻 Boo 提篮标签',sizeSquare:'1:1 方形',sizeStory:'9:16 限时动态',sizePrint:'5×7 打印',lblTpl:'模板 · 30 款',lblSize:'画布尺寸',lblDl:'下载',lblShareTool:'分享这个免费工具',
     fParty:'派对标题',fHost:'主办方（选填）',fDate:'日期',fTime:'时间',fPlace:'地点',fRsvp:'回复方式',fNote:'备注（选填）',
@@ -429,6 +458,7 @@
     heroH1:'Crea una <span class="accent">invitación de Halloween gratis</span> — en tu navegador',
     sub:'Elige una de <b>30 plantillas terroríficas — 10 animadas</b>, escribe los datos de tu fiesta y <b>descarga un PNG o GIF en bucle para WhatsApp / Instagram</b> o <b>imprime una tarjeta de 5×7</b>. Sin registro, nada se sube.',
     countPre:'Halloween en ',
+    eyebrow:'🎃 Próximo: Halloween 2026',navTools:'Herramientas',navInvite:'Invitación de Halloween',langLabel:'Idioma',
     answer:'<b>¿Qué es esto?</b> Un generador gratuito de invitaciones para fiestas de Halloween 2026 y etiquetas de cesta "¡Te han hecho Boo!" que funciona 100% en tu navegador. 30 estilos — 10 animados (grabado embrujado, pesadilla neón, sesión dorada, bosque de papel, espíritu pop, calabaza brillante, fantasmas, caldero burbujeante, lluvia de estrellas, luz de vela) más Clásico, Bruja, Retro, Vintage, Moderno, Minimalista, Kawaii, Huerto de Calabazas, Bosque Embrujado y más — para fiestas de adultos, de niños y todo lo demás.',
     lblMode:'Tipo de tarjeta',modeInvite:'🎉 Invitación',modeBoo:'👻 Etiqueta Boo',sizeSquare:'Cuadrado 1:1',sizeStory:'Historia 9:16',sizePrint:'Imprimir 5×7',lblTpl:'Plantilla · 30 estilos',lblSize:'Tamaño',lblDl:'Descargar',lblShareTool:'Comparte esta herramienta gratuita',
     fParty:'Título de la fiesta',fHost:'Anfitrión (opcional)',fDate:'Fecha',fTime:'Hora',fPlace:'Lugar',fRsvp:'RSVP',fNote:'Nota (opcional)',
@@ -462,6 +492,7 @@
     heroH1:'<span class="accent">ハロウィン招待状</span>を無料で作成 — ブラウザだけで完成',
     sub:'<b>30種類のテンプレート（うち10種類がアニメーション）</b>を選んで、パーティー情報を入力するだけ。<b>PNGやループGIFをダウンロードして WhatsApp / Instagram へ</b>、<b>5×7カードとして印刷</b>もOK。ログイン不要、アップロード一切なし。',
     countPre:'ハロウィンまであと ',
+    eyebrow:'🎃 次はハロウィン2026',navTools:'ツール',navInvite:'ハロウィン招待状',langLabel:'言語',
     answer:'<b>これは何？</b>ブラウザ内で100%動く、無料の2026年ハロウィンパーティー招待状＆「Booされた！」バスケットタグメーカーです。30スタイル——うち10種がアニメーション（妖しい銅版画、ネオン悪夢、黄金の降霊術、紙の森、ポップ幽霊、光るかぼちゃ、おばけ、魔法の鍋、流れ星、ろうそくの灯り）、ほかにクラシック・魔女・レトロ・モダン・ミニマル・カワイイ・かぼちゃ畑・怖い森など——大人も子どもも楽しめるパーティーに。',
     lblMode:'カード種類',modeInvite:'🎉 招待状',modeBoo:'👻 Booバスケットタグ',sizeSquare:'1:1 正方形',sizeStory:'9:16 ストーリー',sizePrint:'5×7 印刷',lblTpl:'テンプレート · 30種',lblSize:'サイズ',lblDl:'ダウンロード',lblShareTool:'この無料ツールをシェア',
     fParty:'パーティータイトル',fHost:'主催者（任意）',fDate:'日付',fTime:'時間',fPlace:'場所',fRsvp:'RSVP',fNote:'ひとこと（任意）',
@@ -495,6 +526,7 @@
     heroH1:'Créez une <span class="accent">invitation d\'Halloween gratuite</span> — dans votre navigateur',
     sub:'Choisissez l\'un des <b>30 templates effrayants — 10 animés</b>, saisissez les détails de votre fête, puis <b>téléchargez un PNG ou un GIF en boucle pour WhatsApp / Instagram</b> ou <b>imprimez une carte 5×7</b>. Sans compte, rien n\'est envoyé.',
     countPre:'Halloween dans ',
+    eyebrow:'🎃 Prochain rendez-vous : Halloween 2026',navTools:'Outils',navInvite:'Invitation Halloween',langLabel:'Langue',
     answer:'<b>Qu\'est-ce que c\'est ?</b> Un générateur gratuit d\'invitations pour fêtes d\'Halloween 2026 et d\'étiquettes « Tu as été BOO ! » qui fonctionne à 100 % dans votre navigateur. 30 styles — 10 animés (gravure hantée, cauchemar néon, séance dorée, forêt de papier, esprit pop, citrouille lumineuse, fantômes, chaudron bouillonnant, pluie d\'étoiles, lueur de bougie) plus Classique, Sorcière, Rétro, Vintage, Moderne, Minimaliste, Kawaii, Citrouillière, Forêt hantée et plus — pour les fêtes d\'adultes, d\'enfants et tout le reste.',
     lblMode:'Type de carte',modeInvite:'🎉 Invitation',modeBoo:'👻 Étiquette Boo',sizeSquare:'Carré 1:1',sizeStory:'Story 9:16',sizePrint:'Impression 5×7',lblTpl:'Template · 30 styles',lblSize:'Format',lblDl:'Télécharger',lblShareTool:'Partagez cet outil gratuit',
     fParty:'Titre de la fête',fHost:'Hôte (facultatif)',fDate:'Date',fTime:'Heure',fPlace:'Lieu',fRsvp:'RSVP',fNote:'Mot (facultatif)',
@@ -1719,7 +1751,7 @@
     $id('modeSeg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;MODE=b.dataset.mode;sync(this,function(d){return d===MODE});modeFields();render();save();});
     $id('tplSel').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;TPL=b.dataset.tpl;sync(this,function(d){return d===TPL});render();save();});
     $id('sizeSeg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;SIZE=b.dataset.size;sync(this,function(d){return d===SIZE});render();save();});
-    $id('langbar').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;applyLang(b.dataset.lang);});
+    $id('langSel').addEventListener('change',function(){applyLang(this.value);});
     ['f-party','f-host','f-date','f-time','f-place','f-rsvp','f-note','b-to','b-from','b-msg'].forEach(function(i){
       var el=$id(i);el.addEventListener('input',function(){render();save();});});
   }
@@ -1746,7 +1778,7 @@
       for(var k in I18N){if(I18N[k][key]===cur){isDef=true;break;}}
       if(isDef&&d[key]!=null)el.value=d[key];});
     var cap=$id('capText');if(cap)cap.value=d.capText;
-    sync($id('langbar'),function(dd){return dd===LANG});
+    var lsel=$id('langSel');if(lsel){lsel.value=LANG;lsel.setAttribute('aria-label',d.langLabel||'Language');}
     render();save();
   }
   function dataURL(){return $id('pv').toDataURL('image/png')}
