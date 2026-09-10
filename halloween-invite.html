@@ -17,16 +17,17 @@
 <meta name="twitter:description" content="25 spooky invite templates — 5 animated — in your browser. No login, nothing uploaded.">
 <link rel="canonical" href="https://aiharryone.github.io/trendsnap/halloween-invite.html">
 <script type="application/ld+json">
-[{"@context":"https://schema.org","@type":"WebPage","name":"Halloween Invitation Maker 2026","datePublished":"2026-09-03","dateModified":"2026-09-03","description":"Free in-browser Halloween 2026 party invitation and Boo-basket tag maker. No login, nothing uploaded."},
+[{"@context":"https://schema.org","@type":"WebPage","name":"Halloween Invitation Maker 2026","datePublished":"2026-09-03","dateModified":"2026-09-10","inLanguage":["en","zh-Hant","zh-Hans","es","ja","fr"],"description":"Free in-browser Halloween 2026 party invitation and Boo-basket tag maker: 30 templates, 10 animated, in 6 languages. No login, nothing uploaded."},
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Is the Halloween invite maker really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — every template and size is free, with no watermark and no login."}},
 {"@type":"Question","name":"Does it work on my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes, it works in any browser. Download the PNG and share it, or print it."}},
 {"@type":"Question","name":"Are my details uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs locally in your browser — nothing you type ever leaves your device."}},
 {"@type":"Question","name":"Can I print the invitations?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose the 5×7 in print size (1500×2100 px) and use Print, or save the PNG and print it."}},
-{"@type":"Question","name":"How many templates are there?","acceptedAnswer":{"@type":"Answer","text":"Seven: Classic orange, Witch, Retro, Vintage, Modern editorial, Minimal and cute Kawaii — enough for adult parties, kids' parties and everything between."}},
+{"@type":"Question","name":"How many templates are there?","acceptedAnswer":{"@type":"Answer","text":"Thirty in total, ten of them animated: Classic orange, Witch, Retro, Vintage, Modern editorial, Minimal, Kawaii and Pumpkin Patch, plus illustrated styles such as Haunted Etching, Neon Nightmare, Golden Séance, Paper Woods and Pop Spook — enough for adult parties, kids' parties and everything between."}},
 {"@type":"Question","name":"What is a Boo basket tag?","acceptedAnswer":{"@type":"Answer","text":"In the 'You've been BOO'd!' neighbourhood game, someone secretly leaves you a small treat basket with a tag; you then make two baskets and pass them on. This tool prints those tags."}},
 {"@type":"Question","name":"Do you make formal certificates too?","acceptedAnswer":{"@type":"Answer","text":"No — TrendSnap makes playful holiday cards. For formal awards, diplomas or business documents use our Certificate Maker."}}
 ]}
+]
 </script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "26b749ec88b5405bb9524de7d3deb750"}'></script>
 <!-- TODO(上线后):CF Dashboard 给 trendsnap 建独立 Web Analytics token 再全站替换 -->
@@ -177,23 +178,31 @@
 <div class="wrap">
   <div class="hero enter d1">
     <span class="eyebrow">🎃 Next up: Halloween 2026</span>
-    <h1>Make a <span class="accent">Free Halloween Invitation</span> — right in your browser</h1>
-    <p class="sub">Pick one of <b>30 spooky templates — 10 of them animated</b>, type your party details, then <b>download a PNG or looping GIF for WhatsApp / Instagram</b> or <b>print a 5×7 card</b>. No login, nothing uploaded.</p>
-    <p id="count">Halloween in <b id="countN">…</b> · Sat, Oct 31 2026</p>
-    <div class="answer">
+    <h1 id="heroH1" data-i18n-html="heroH1">Make a <span class="accent">Free Halloween Invitation</span> — right in your browser</h1>
+    <p class="sub" id="subline" data-i18n-html="sub">Pick one of <b>30 spooky templates — 10 of them animated</b>, type your party details, then <b>download a PNG or looping GIF for WhatsApp / Instagram</b> or <b>print a 5×7 card</b>. No login, nothing uploaded.</p>
+    <p id="count"><span id="countPre" data-i18n="countPre">Halloween in </span><b id="countN">…</b> · Sat, Oct 31 2026</p>
+    <div class="answer" id="answer" data-i18n-html="answer">
       <b>What is this?</b> A free Halloween 2026 party invitation &amp; "You've been BOO'd!" basket-tag maker that runs 100% in your browser. 30 styles — 10 animated (a haunted Goya etching, neon nightmare, golden séance, paper-cut woods, pop-art spook, glowing pumpkin, floating ghosts, bubbling cauldron, starfall, candlelight) plus Classic, Witch, Retro, Vintage, Modern, Minimal, Kawaii, Pumpkin Patch, Haunted Forest and more — for adult parties, kids' parties and everything between.
     </div>
   </div>
 
   <div class="stage enter d2">
     <div class="panel">
-      <h3>Card type</h3>
+      <h3 data-i18n="lblMode">Card type</h3>
+      <div class="langbar seg" id="langbar" style="margin-bottom:12px">
+        <button data-lang="en" class="on">EN</button>
+        <button data-lang="zhHant">繁體</button>
+        <button data-lang="zhHans">简体</button>
+        <button data-lang="es">ES</button>
+        <button data-lang="ja">日本語</button>
+        <button data-lang="fr">FR</button>
+      </div>
       <div class="seg" id="modeSeg">
         <button data-mode="invite" class="on">🎉 Invitation</button>
         <button data-mode="boo">👻 Boo-basket tag</button>
       </div>
 
-      <h3>Template · 30 styles</h3>
+      <h3 data-i18n="lblTpl">Template · 30 styles</h3>
       <div class="tpls" id="tplSel">
         <button data-tpl="flicker"><span class="dot" style="background:linear-gradient(160deg,#120B06 35%,#FF9A33)"></span>Flicker ✨</button>
         <button data-tpl="ghosts"><span class="dot" style="background:linear-gradient(160deg,#1A1033 35%,#B9A6FF)"></span>Ghost Drift ✨</button>
@@ -227,7 +236,7 @@
         <button data-tpl="cobweb"><span class="dot" style="background:linear-gradient(160deg,#E7D8C8 35%,#5C3A6B)"></span>Web Corner</button>
       </div>
 
-      <h3>Canvas size</h3>
+      <h3 data-i18n="lblSize">Canvas size</h3>
       <div class="seg grid3" id="sizeSeg">
         <button data-size="square" class="on">1:1 Square</button>
         <button data-size="story">9:16 Story</button>
@@ -235,40 +244,40 @@
       </div>
 
       <div id="inviteFields">
-        <div class="field"><label>Party title</label><input id="f-party" value="You're Invited — A Spooky Night" maxlength="42"></div>
-        <div class="field"><label>Hosted by (optional)</label><input id="f-host" value="The Hollow Family" maxlength="40"></div>
+        <div class="field"><label data-i18n="fParty">Party title</label><input id="f-party" value="You're Invited — A Spooky Night" maxlength="42"></div>
+        <div class="field"><label data-i18n="fHost">Hosted by (optional)</label><input id="f-host" value="The Hollow Family" maxlength="40"></div>
         <div class="row2">
-          <div class="field"><label>Date</label><input id="f-date" value="Saturday · Oct 31" maxlength="24"></div>
-          <div class="field"><label>Time</label><input id="f-time" value="7:00 PM" maxlength="16"></div>
+          <div class="field"><label data-i18n="fDate">Date</label><input id="f-date" value="Saturday · Oct 31" maxlength="24"></div>
+          <div class="field"><label data-i18n="fTime">Time</label><input id="f-time" value="7:00 PM" maxlength="16"></div>
         </div>
-        <div class="field"><label>Location</label><input id="f-place" value="221 Elm Hollow Lane" maxlength="46"></div>
-        <div class="field"><label>RSVP line</label><input id="f-rsvp" value="RSVP by Oct 24 · 555-0119" maxlength="40"></div>
-        <div class="field"><label>Extra note (optional)</label><input id="f-note" value="Costumes strongly encouraged" maxlength="48"></div>
+        <div class="field"><label data-i18n="fPlace">Location</label><input id="f-place" value="221 Elm Hollow Lane" maxlength="46"></div>
+        <div class="field"><label data-i18n="fRsvp">RSVP line</label><input id="f-rsvp" value="RSVP by Oct 24 · 555-0119" maxlength="40"></div>
+        <div class="field"><label data-i18n="fNote">Extra note (optional)</label><input id="f-note" value="Costumes strongly encouraged" maxlength="48"></div>
       </div>
 
       <div id="booFields" style="display:none">
-        <div class="field"><label>To (neighbour / family)</label><input id="b-to" value="The Miller Family" maxlength="40"></div>
-        <div class="field"><label>From</label><input id="b-from" value="Your secret Boo" maxlength="40"></div>
-        <div class="field"><label>Tag message</label><textarea id="b-msg" rows="3">A little treat found its way to you! Keep the fun going — make two BOO baskets and leave them on neighbours' porches with this tag.</textarea></div>
+        <div class="field"><label data-i18n="bTo">To (neighbour / family)</label><input id="b-to" value="The Miller Family" maxlength="40"></div>
+        <div class="field"><label data-i18n="bFrom">From</label><input id="b-from" value="Your secret Boo" maxlength="40"></div>
+        <div class="field"><label data-i18n="bMsg">Tag message</label><textarea id="b-msg" rows="3">A little treat found its way to you! Keep the fun going — make two BOO baskets and leave them on neighbours' porches with this tag.</textarea></div>
       </div>
 
-      <h3>Download</h3>
-      <button class="cta dl" id="btnShare">📤 Share card</button>
-      <button class="cta dl" id="btnDl">⬇ Download</button>
-      <p style="font-size:12px;color:var(--muted);margin:4px 0 0">Animated templates download as a looping GIF; others as PNG.</p>
-      <p style="font-size:12px;color:var(--muted);margin:8px 0 0">📤 opens your device's share sheet with the card attached — WhatsApp, Telegram, Instagram, Messages, Email and more. On desktop the card is saved and a share window opens.</p>
-      <button class="cta ghost" id="btnPrint" style="margin-top:10px">🖨 Print card</button>
+      <h3 data-i18n="lblDl">Download</h3>
+      <button class="cta dl" id="btnShare" data-i18n="btnShare">📤 Share card</button>
+      <button class="cta dl" id="btnDl" data-i18n="btnDl">⬇ Download</button>
+      <p data-i18n="dlHint1" style="font-size:12px;color:var(--muted);margin:4px 0 0">Animated templates download as a looping GIF; others as PNG.</p>
+      <p data-i18n="dlHint2" style="font-size:12px;color:var(--muted);margin:8px 0 0">📤 opens your device's share sheet with the card attached — WhatsApp, Telegram, Instagram, Messages, Email and more. On desktop the card is saved and a share window opens.</p>
+      <button class="cta ghost" id="btnPrint" style="margin-top:10px" data-i18n="btnPrint">🖨 Print card</button>
     </div>
 
     <div>
       <div class="pv-head"><span id="pvLabel">1:1 · 1080×1080</span></div>
       <div id="pvbox"><canvas id="pv" width="1080" height="1080"></canvas></div>
       <div class="badges">
-        <span>100% in your browser</span><span>Nothing uploaded</span><span>No login</span><span>Free</span>
+        <span data-i18n="badge1">100% in your browser</span><span data-i18n="badge2">Nothing uploaded</span><span data-i18n="badge3">No login</span><span data-i18n="badge4">Free</span>
       </div>
 
       <div class="panel" style="margin-top:14px">
-        <h3>Share this free tool</h3>
+        <h3 data-i18n="lblShareTool">Share this free tool</h3>
         <div class="sharebar">
           <a class="sharebtn" data-net="x" href="#" target="_blank" rel="noopener">𝕏 Post</a>
           <a class="sharebtn" data-net="wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
@@ -280,26 +289,26 @@
         </div>
         <div class="copyrow">
           <input id="capText" readonly value="🎃 I made a free animated Halloween invite — 30 templates, no login: https://aiharryone.github.io/trendsnap/">
-          <button class="cta ghost small" id="btnCopy" style="flex:0 0 auto;width:auto">Copy</button>
+          <button class="cta ghost small" id="btnCopy" style="flex:0 0 auto;width:auto" data-i18n="btnCopy">Copy</button>
         </div>
       </div>
     </div>
   </div>
 
   <div class="faq enter d3">
-    <details open><summary>Is the Halloween invite maker really free?</summary><p>Yes — all 30 templates and every canvas size are free, with no watermark and no account. Ten templates are animated and export as GIF.</p></details>
-    <details><summary>Are my party details uploaded anywhere?</summary><p>No. Every letter is drawn onto a canvas inside your browser. Nothing you type ever leaves your device.</p></details>
-    <details><summary>How many templates can I choose from?</summary><p>30 — ten of them animated: Haunted Etching (a public-domain Goya print flickering like an apparition), Neon Nightmare, Golden Séance, Paper Woods, Pop Spook, Flicker, Ghost Drift, Witch's Cauldron, Starfall and Candlelight. Then Classic, Witch, Retro, Vintage, Modern, Minimal, Kawaii, Pumpkin Patch, Haunted Forest, Jack Light, Violet Witch, Wicked Night, Big Pumpkin, Glow Jack, Orange Sky, Ember Frame, Masquerade, Moon & Bats, Haunted House and Web Corner — enough range for every party mood.</p></details>
-    <details><summary>How do I send the invitation?</summary><p>Tap <b>Download</b> (animated templates give you a looping GIF, others a PNG) and post the image anywhere — or use <b>📤 Share card</b> to send it straight to WhatsApp / Telegram / Email and more. <b>Print card</b> makes paper invites at a real 5×7 size.</p></details>
-    <details><summary>What is a Boo-basket tag?</summary><p>In the Halloween neighbourhood game, a secret "Boo" leaves a small treat basket on a porch with a tag. The receiver makes two baskets and passes them on. Pick <b>Boo-basket tag</b> above to print those tags.</p></details>
+    <details open><summary data-i18n="faq1s">Is the Halloween invite maker really free?</summary><p data-i18n="faq1p">Yes — all 30 templates and every canvas size are free, with no watermark and no account. Ten templates are animated and export as GIF.</p></details>
+    <details><summary data-i18n="faq2s">Are my party details uploaded anywhere?</summary><p data-i18n="faq2p">No. Every letter is drawn onto a canvas inside your browser. Nothing you type ever leaves your device.</p></details>
+    <details><summary data-i18n="faq3s">How many templates can I choose from?</summary><p data-i18n-html="faq3p">30 — ten of them animated: Haunted Etching (a public-domain Goya print flickering like an apparition), Neon Nightmare, Golden Séance, Paper Woods, Pop Spook, Flicker, Ghost Drift, Witch's Cauldron, Starfall and Candlelight. Then Classic, Witch, Retro, Vintage, Modern, Minimal, Kawaii, Pumpkin Patch, Haunted Forest, Jack Light, Violet Witch, Wicked Night, Big Pumpkin, Glow Jack, Orange Sky, Ember Frame, Masquerade, Moon &amp; Bats, Haunted House and Web Corner — enough range for every party mood.</p></details>
+    <details><summary data-i18n="faq4s">How do I send the invitation?</summary><p data-i18n-html="faq4p">Tap <b>Download</b> (animated templates give you a looping GIF, others a PNG) and post the image anywhere — or use <b>📤 Share card</b> to send it straight to WhatsApp / Telegram / Email and more. <b>Print card</b> makes paper invites at a real 5×7 size.</p></details>
+    <details><summary data-i18n="faq5s">What is a Boo-basket tag?</summary><p data-i18n-html="faq5p">In the Halloween neighbourhood game, a secret "Boo" leaves a small treat basket on a porch with a tag. The receiver makes two baskets and passes them on. Pick <b>Boo-basket tag</b> above to print those tags.</p></details>
   </div>
 
-  <p class="notecert enter d4">Making holiday fun — not formal documents. Need an award certificate, diploma or business card? Use <a href="https://aiharryone.github.io/certificate-maker/" target="_blank" rel="noopener">Certificate Maker →</a></p>
+  <p class="notecert enter d4" data-i18n-html="notecert">Making holiday fun — not formal documents. Need an award certificate, diploma or business card? Use <a href="https://aiharryone.github.io/certificate-maker/" target="_blank" rel="noopener">Certificate Maker →</a></p>
 </div>
 
 <footer>
-  TrendSnap · free little tools for the moment you're in — nothing uploads<br>
-  Questions? <a href="mailto:Ai_harryone@outlook.com">Ai_harryone@outlook.com</a> · <a href="index.html">All tools</a>
+  <span data-i18n="foot1">TrendSnap · free little tools for the moment you're in — nothing uploads</span><br>
+  <span data-i18n="foot2">Questions?</span> <a href="mailto:Ai_harryone@outlook.com">Ai_harryone@outlook.com</a> · <a href="index.html" data-i18n="foot3">All tools</a>
 </footer>
 
 <div id="printArea"><img id="printImg" alt="Halloween invitation"></div>
@@ -312,6 +321,210 @@
   var $id=function(s){return document.getElementById(s)};
   var BODY='"Segoe UI",Roboto,Helvetica,Arial,sans-serif';
   var MODE='invite',TPL='orange',SIZE='square';
+  /* ---------- i18n:EN/繁/简/ES/JA/FR (2026-09-10) ---------- */
+  var LANG='en';
+  var FIELDKEYS={ 'f-party':'dv_party','f-host':'dv_host','f-date':'dv_date','f-time':'dv_time','f-place':'dv_place','f-rsvp':'dv_rsvp','f-note':'dv_note','b-to':'dv_bto','b-from':'dv_bfrom','b-msg':'dv_bmsg' };
+  function L(k){var d=I18N[LANG]||I18N.en;return d[k]!=null?d[k]:(I18N.en[k]!=null?I18N.en[k]:k)}
+  var I18N={
+  en:{title:"Free Halloween Invitation Maker — Animated Templates, No Login",
+    heroH1:'Make a <span class="accent">Free Halloween Invitation</span> — right in your browser',
+    sub:'Pick one of <b>30 spooky templates — 10 of them animated</b>, type your party details, then <b>download a PNG or looping GIF for WhatsApp / Instagram</b> or <b>print a 5×7 card</b>. No login, nothing uploaded.',
+    countPre:'Halloween in ',
+    answer:'<b>What is this?</b> A free Halloween 2026 party invitation &amp; "You\'ve been BOO\'d!" basket-tag maker that runs 100% in your browser. 30 styles — 10 animated (a haunted Goya etching, neon nightmare, golden séance, paper-cut woods, pop-art spook, glowing pumpkin, floating ghosts, bubbling cauldron, starfall, candlelight) plus Classic, Witch, Retro, Vintage, Modern, Minimal, Kawaii, Pumpkin Patch, Haunted Forest and more — for adult parties, kids\' parties and everything between.',
+    lblMode:'Card type',modeInvite:'🎉 Invitation',modeBoo:'👻 Boo-basket tag',sizeSquare:'1:1 Square',sizeStory:'9:16 Story',sizePrint:'5×7 Print',lblTpl:'Template · 30 styles',lblSize:'Canvas size',lblDl:'Download',lblShareTool:'Share this free tool',
+    fParty:'Party title',fHost:'Hosted by (optional)',fDate:'Date',fTime:'Time',fPlace:'Location',fRsvp:'RSVP line',fNote:'Extra note (optional)',
+    bTo:'To (neighbour / family)',bFrom:'From',bMsg:'Tag message',
+    dv_party:"You're Invited — A Spooky Night",dv_host:'The Hollow Family',dv_date:'Saturday · Oct 31',dv_time:'7:00 PM',dv_place:'221 Elm Hollow Lane',dv_rsvp:'RSVP by Oct 24 · 555-0119',dv_note:'Costumes strongly encouraged',
+    dv_bto:'The Miller Family',dv_bfrom:'Your secret Boo',dv_bmsg:"A little treat found its way to you! Keep the fun going — make two BOO baskets and leave them on neighbours' porches with this tag.",
+    btnShare:'📤 Share card',btnDl:'⬇ Download',btnPrint:'🖨 Print card',btnCopy:'Copy',
+    dlHint1:'Animated templates download as a looping GIF; others as PNG.',
+    dlHint2:"📤 opens your device's share sheet with the card attached — WhatsApp, Telegram, Instagram, Messages, Email and more. On desktop the card is saved and a share window opens.",
+    badge1:'100% in your browser',badge2:'Nothing uploaded',badge3:'No login',badge4:'Free',
+    capShare:"🎃 I made a free animated Halloween invite in my browser — 30 templates, no login, nothing uploaded:",
+    booHead:"You've been BOO'd!",booTag:'BOO-BASKET TAG · HALLOWEEN {y}',booTo:'To:  ',booFrom:'From:  ',booMade:'made free at TrendSnap',
+    ouijaYes:'Y E S',ouijaNo:'N O',spooky:'SPOOKY!',
+    faq1s:'Is the Halloween invite maker really free?',
+    faq1p:'Yes — all 30 templates and every canvas size are free, with no watermark and no account. Ten templates are animated and export as GIF.',
+    faq2s:'Are my party details uploaded anywhere?',
+    faq2p:'No. Every letter is drawn onto a canvas inside your browser. Nothing you type ever leaves your device.',
+    faq3s:'How many templates can I choose from?',
+    faq3p:'30 — ten of them animated: Haunted Etching (a public-domain Goya print flickering like an apparition), Neon Nightmare, Golden Séance, Paper Woods, Pop Spook, Flicker, Ghost Drift, Witch\'s Cauldron, Starfall and Candlelight. Then Classic, Witch, Retro, Vintage, Modern, Minimal, Kawaii, Pumpkin Patch, Haunted Forest, Jack Light, Violet Witch, Wicked Night, Big Pumpkin, Glow Jack, Orange Sky, Ember Frame, Masquerade, Moon &amp; Bats, Haunted House and Web Corner — enough range for every party mood.',
+    faq4s:'How do I send the invitation?',
+    faq4p:'Tap <b>Download</b> (animated templates give you a looping GIF, others a PNG) and post the image anywhere — or use <b>📤 Share card</b> to send it straight to WhatsApp / Telegram / Email and more. <b>Print card</b> makes paper invites at a real 5×7 size.',
+    faq5s:'What is a Boo-basket tag?',
+    faq5p:'In the Halloween neighbourhood game, a secret "Boo" leaves a small treat basket on a porch with a tag. The receiver makes two baskets and passes them on. Pick <b>Boo-basket tag</b> above to print those tags.',
+    notecert:'Making holiday fun — not formal documents. Need an award certificate, diploma or business card? Use <a href="https://aiharryone.github.io/certificate-maker/" target="_blank" rel="noopener">Certificate Maker →</a>',
+    foot1:"TrendSnap · free little tools for the moment you're in — nothing uploads",foot2:'Questions?',foot3:'All tools',
+    capText:"🎃 I made a free animated Halloween invite — 30 templates, no login: https://aiharryone.github.io/trendsnap/",
+    tpl_flicker:'Flicker',tpl_ghosts:'Ghost Drift',tpl_cauldron:"Witch's Cauldron",tpl_starfall:'Starfall',tpl_candle:'Candlelight',
+    tpl_haunt:'Haunted Etching',tpl_synth:'Neon Nightmare',tpl_seance:'Golden Séance',tpl_paperwoods:'Paper Woods',tpl_popspook:'Pop Spook',
+    tpl_orange:'Classic',tpl_witch:'Witch',tpl_retro:'Retro',tpl_vintage:'Vintage',tpl_modern:'Modern',tpl_minimal:'Minimal',tpl_kawaii:'Kawaii',tpl_patch:'Pumpkin Patch',tpl_fog:'Haunted Forest',tpl_jack:'Jack Light',tpl_violet:'Violet Witch',tpl_night:'Wicked Night',tpl_bigpump:'Big Pumpkin',tpl_face:'Glow Jack',tpl_twilight:'Orange Sky',tpl_ember:'Ember Frame',tpl_purpure:'Masquerade',tpl_moonbat:'Moon & Bats',tpl_house:'Haunted House',tpl_cobweb:'Web Corner'},
+  zhHant:{title:"免費萬聖節邀請卡產生器——動態範本、免登入",
+    heroH1:'免費製作<span class="accent">萬聖節邀請卡</span>——全在瀏覽器完成',
+    sub:'從 <b>30 款搞怪範本——其中 10 款動態</b>挑一款，輸入派對資訊，就能<b>下載 PNG 或循環 GIF 傳到 WhatsApp / Instagram</b>，或<b>列印 5×7 卡片</b>。免登入、不上傳任何資料。',
+    countPre:'距離萬聖節還有 ',
+    answer:'<b>這是什麼？</b>完全在瀏覽器裡執行的免費 2026 萬聖節派對邀請卡與「你被 Boo 了！」提籃標籤產生器。30 種風格——10 種動態（妖異蝕刻、霓虹噩夢、黑金降靈會、剪紙怖林、波普驚魂、發光南瓜、小鬼飄浮、冒泡魔藥鍋、星夜流星、燭光搖曳），另有經典、女巫、復古、現代、極簡、卡哇伊、南瓜園、鬧鬼森林等——大人派對、小孩派對都適合。',
+    lblMode:'卡片類型',modeInvite:'🎉 邀請卡',modeBoo:'👻 Boo 提籃標籤',sizeSquare:'1:1 方形',sizeStory:'9:16 限時動態',sizePrint:'5×7 列印',lblTpl:'範本 · 30 款',lblSize:'畫布尺寸',lblDl:'下載',lblShareTool:'分享這個免費工具',
+    fParty:'派對標題',fHost:'主辦人（選填）',fDate:'日期',fTime:'時間',fPlace:'地點',fRsvp:'回覆方式',fNote:'備註（選填）',
+    bTo:'給（鄰居 / 家庭）',bFrom:'來自',bMsg:'標籤留言',
+    dv_party:'你受邀請——驚魂之夜',dv_host:'Hollow 家族',dv_date:'週六 · 10 月 31 日',dv_time:'晚上 7:00',dv_place:'榆樹巷 221 號',dv_rsvp:'10 月 24 日前回覆 · 555-0119',dv_note:'歡迎盛裝打扮',
+    dv_bto:'Miller 一家',dv_bfrom:'你的秘密 Boo',dv_bmsg:'一點小點心找到了你！把樂趣延續下去——做兩個 Boo 提籃，連同這張標籤放在鄰居門口。',
+    btnShare:'📤 分享卡片',btnDl:'⬇ 下載',btnPrint:'🖨 列印卡片',btnCopy:'複製',
+    dlHint1:'動態範本下載循環 GIF，其他為 PNG。',
+    dlHint2:'📤 會開啟裝置的分享面板，把卡片直接傳到 WhatsApp、Telegram、Instagram、Email 等。桌面版會先存檔再開分享視窗。',
+    badge1:'100% 瀏覽器內完成',badge2:'不上傳任何資料',badge3:'免登入',badge4:'免費',
+    capShare:'🎃 我在瀏覽器裡做了一張免費萬聖節動態邀請卡——30 款範本、免登入、不上傳：',
+    booHead:'你被 Boo 了！',booTag:'BOO 提籃標籤 · 萬聖節 {y}',booTo:'給：',booFrom:'來自：',booMade:'TrendSnap 免費製作',
+    ouijaYes:'是',ouijaNo:'否',spooky:'鬼來囉！',
+    faq1s:'萬聖節邀請卡產生器真的免費嗎？',
+    faq1p:'是的——30 款範本和所有畫布尺寸全部免費，無浮水印、無需帳號。其中 10 款是動態範本，可匯出 GIF。',
+    faq2s:'我的派對資訊會被上傳嗎？',
+    faq2p:'不會。每個字都畫在你瀏覽器裡的畫布上，輸入的內容永遠不會離開你的裝置。',
+    faq3s:'可以選多少種範本？',
+    faq3p:'共 30 款——10 款動態：妖異蝕刻（戈雅公版版畫如幽靈般閃現）、霓虹噩夢、黑金降靈會、剪紙怖林、波普驚魂、南瓜燈閃靈、小鬼飄浮、魔藥鍋、星夜流星、燭光搖曳。另有經典、女巫、復古、鄉村紙感、現代、極簡、卡哇伊、南瓜園、鬧鬼森林、傑克燈、紫魅女巫、邪夜、大南瓜、發光傑克、橘色暮空、燼光邊框、假面舞會、月與蝙蝠、鬧鬼宅邸、蛛網角落——各種派對氛圍都有。',
+    faq4s:'邀請卡怎麼發出去？',
+    faq4p:'點<b>下載</b>（動態範本得到循環 GIF，其他為 PNG），把圖片發到任何地方——或用 <b>📤 分享卡片</b>直接傳到 WhatsApp / Telegram / Email 等。<b>列印卡片</b>可輸出真正的 5×7 紙質邀請卡。',
+    faq5s:'什麼是 Boo 提籃標籤？',
+    faq5p:'在萬聖節社區遊戲裡，一位神秘的「Boo」會把小禮物提籃放在別家門口並附上標籤；收到的人再做兩個提籃繼續傳下去。選擇上方的 <b>Boo 提籃標籤</b>即可列印這種標籤。',
+    notecert:'這裡做節日趣味——不是正式文件。需要獎狀、證書或名片？試試 <a href="https://aiharryone.github.io/certificate-maker/" target="_blank" rel="noopener">Certificate Maker →</a>',
+    foot1:'TrendSnap · 當下用得上的免費小工具——資料不上傳',foot2:'有問題？',foot3:'全部工具',
+    capText:'🎃 我在瀏覽器裡做了一張免費萬聖節邀請卡——30 款範本、免登入： https://aiharryone.github.io/trendsnap/',
+    tpl_flicker:'南瓜燈閃靈',tpl_ghosts:'小鬼飄浮',tpl_cauldron:'魔藥鍋',tpl_starfall:'星夜流星',tpl_candle:'燭光搖曳',
+    tpl_haunt:'妖異蝕刻',tpl_synth:'霓虹噩夢',tpl_seance:'黑金降靈會',tpl_paperwoods:'剪紙怖林',tpl_popspook:'波普驚魂',
+    tpl_orange:'經典',tpl_witch:'女巫',tpl_retro:'復古',tpl_vintage:'鄉村紙感',tpl_modern:'現代',tpl_minimal:'極簡',tpl_kawaii:'卡哇伊',tpl_patch:'南瓜園',tpl_fog:'鬧鬼森林',tpl_jack:'傑克燈',tpl_violet:'紫魅女巫',tpl_night:'邪夜',tpl_bigpump:'大南瓜',tpl_face:'發光傑克',tpl_twilight:'橘色暮空',tpl_ember:'燼光邊框',tpl_purpure:'假面舞會',tpl_moonbat:'月與蝙蝠',tpl_house:'鬧鬼宅邸',tpl_cobweb:'蛛網角落'},
+  zhHans:{title:"免费万圣节邀请卡生成器——动态模板、免登录",
+    heroH1:'免费制作<span class="accent">万圣节邀请卡</span>——全在浏览器完成',
+    sub:'从 <b>30 款搞怪模板——其中 10 款动态</b>挑一款，输入派对信息，就能<b>下载 PNG 或循环 GIF 发到 WhatsApp / Instagram</b>，或<b>打印 5×7 卡片</b>。免登录、不上传任何数据。',
+    countPre:'距离万圣节还有 ',
+    answer:'<b>这是什么？</b>完全在浏览器里运行的免费 2026 万圣节派对邀请卡与「你被 Boo 了！」提篮标签生成器。30 种风格——10 种动态（妖异蚀刻、霓虹噩梦、黑金降灵会、剪纸怖林、波普惊魂、发光南瓜、小鬼飘浮、冒泡魔药锅、星夜流星、烛光摇曳），另有经典、女巫、复古、现代、极简、卡哇伊、南瓜园、闹鬼森林等——大人派对、小孩派对都适合。',
+    lblMode:'卡片类型',modeInvite:'🎉 邀请卡',modeBoo:'👻 Boo 提篮标签',sizeSquare:'1:1 方形',sizeStory:'9:16 限时动态',sizePrint:'5×7 打印',lblTpl:'模板 · 30 款',lblSize:'画布尺寸',lblDl:'下载',lblShareTool:'分享这个免费工具',
+    fParty:'派对标题',fHost:'主办方（选填）',fDate:'日期',fTime:'时间',fPlace:'地点',fRsvp:'回复方式',fNote:'备注（选填）',
+    bTo:'给（邻居 / 家庭）',bFrom:'来自',bMsg:'标签留言',
+    dv_party:'你受邀请——惊魂之夜',dv_host:'Hollow 家族',dv_date:'周六 · 10 月 31 日',dv_time:'晚上 7:00',dv_place:'榆树巷 221 号',dv_rsvp:'10 月 24 日前回复 · 555-0119',dv_note:'欢迎盛装打扮',
+    dv_bto:'Miller 一家',dv_bfrom:'你的秘密 Boo',dv_bmsg:'一点小心意找到了你！把乐趣延续下去——做两个 Boo 提篮，连同这张标签放在邻居门口。',
+    btnShare:'📤 分享卡片',btnDl:'⬇ 下载',btnPrint:'🖨 打印卡片',btnCopy:'复制',
+    dlHint1:'动态模板下载循环 GIF，其他为 PNG。',
+    dlHint2:'📤 会打开设备的分享面板，把卡片直接发到 WhatsApp、Telegram、Instagram、Email 等。桌面版会先存档再打开分享窗口。',
+    badge1:'100% 浏览器内完成',badge2:'不上传任何数据',badge3:'免登录',badge4:'免费',
+    capShare:'🎃 我在浏览器里做了一张免费万圣节动态邀请卡——30 款模板、免登录、不上传：',
+    booHead:'你被 Boo 了！',booTag:'BOO 提篮标签 · 万圣节 {y}',booTo:'给：',booFrom:'来自：',booMade:'TrendSnap 免费制作',
+    ouijaYes:'是',ouijaNo:'否',spooky:'鬼来咯！',
+    faq1s:'万圣节邀请卡生成器真的免费吗？',
+    faq1p:'是的——30 款模板和所有画布尺寸全部免费，无水印、无需账号。其中 10 款是动态模板，可导出 GIF。',
+    faq2s:'我的派对信息会被上传吗？',
+    faq2p:'不会。每个字都画在你浏览器里的画布上，输入的内容永远不会离开你的设备。',
+    faq3s:'可以选多少种模板？',
+    faq3p:'共 30 款——10 款动态：妖异蚀刻（戈雅公版版画如幽灵般闪现）、霓虹噩梦、黑金降灵会、剪纸怖林、波普惊魂、南瓜灯闪灵、小鬼飘浮、魔药锅、星夜流星、烛光摇曳。另有经典、女巫、复古、乡村纸感、现代、极简、卡哇伊、南瓜园、闹鬼森林、杰克灯、紫魅女巫、邪夜、大南瓜、发光杰克、橘色暮空、烬光边框、假面舞会、月与蝙蝠、闹鬼宅邸、蛛网角落——各种派对氛围都有。',
+    faq4s:'邀请卡怎么发出去？',
+    faq4p:'点<b>下载</b>（动态模板得到循环 GIF，其他为 PNG），把图片发到任何地方——或用 <b>📤 分享卡片</b>直接发到 WhatsApp / Telegram / Email 等。<b>打印卡片</b>可输出真正的 5×7 纸质邀请卡。',
+    faq5s:'什么是 Boo 提篮标签？',
+    faq5p:'在万圣节社区游戏里，一位神秘的「Boo」会把小礼物提篮放在别家门口并附上标签；收到的人再做两个提篮继续传下去。选择上方的 <b>Boo 提篮标签</b>即可打印这种标签。',
+    notecert:'这里做节日趣味——不是正式文件。需要奖状、证书或名片？试试 <a href="https://aiharryone.github.io/certificate-maker/" target="_blank" rel="noopener">Certificate Maker →</a>',
+    foot1:'TrendSnap · 当下用得上的免费小工具——数据不上传',foot2:'有问题？',foot3:'全部工具',
+    capText:'🎃 我在浏览器里做了一张免费万圣节邀请卡——30 款模板、免登录： https://aiharryone.github.io/trendsnap/',
+    tpl_flicker:'南瓜灯闪灵',tpl_ghosts:'小鬼飘浮',tpl_cauldron:'魔药锅',tpl_starfall:'星夜流星',tpl_candle:'烛光摇曳',
+    tpl_haunt:'妖异蚀刻',tpl_synth:'霓虹噩梦',tpl_seance:'黑金降灵会',tpl_paperwoods:'剪纸怖林',tpl_popspook:'波普惊魂',
+    tpl_orange:'经典',tpl_witch:'女巫',tpl_retro:'复古',tpl_vintage:'乡村纸感',tpl_modern:'现代',tpl_minimal:'极简',tpl_kawaii:'卡哇伊',tpl_patch:'南瓜园',tpl_fog:'闹鬼森林',tpl_jack:'杰克灯',tpl_violet:'紫魅女巫',tpl_night:'邪夜',tpl_bigpump:'大南瓜',tpl_face:'发光杰克',tpl_twilight:'橘色暮空',tpl_ember:'烬光边框',tpl_purpure:'假面舞会',tpl_moonbat:'月与蝙蝠',tpl_house:'闹鬼宅邸',tpl_cobweb:'蛛网角落'},
+  es:{title:"Invitaciones de Halloween gratis — plantillas animadas, sin registro",
+    heroH1:'Crea una <span class="accent">invitación de Halloween gratis</span> — en tu navegador',
+    sub:'Elige una de <b>30 plantillas terroríficas — 10 animadas</b>, escribe los datos de tu fiesta y <b>descarga un PNG o GIF en bucle para WhatsApp / Instagram</b> o <b>imprime una tarjeta de 5×7</b>. Sin registro, nada se sube.',
+    countPre:'Halloween en ',
+    answer:'<b>¿Qué es esto?</b> Un generador gratuito de invitaciones para fiestas de Halloween 2026 y etiquetas de cesta "¡Te han hecho Boo!" que funciona 100% en tu navegador. 30 estilos — 10 animados (grabado embrujado, pesadilla neón, sesión dorada, bosque de papel, espíritu pop, calabaza brillante, fantasmas, caldero burbujeante, lluvia de estrellas, luz de vela) más Clásico, Bruja, Retro, Vintage, Moderno, Minimalista, Kawaii, Huerto de Calabazas, Bosque Embrujado y más — para fiestas de adultos, de niños y todo lo demás.',
+    lblMode:'Tipo de tarjeta',modeInvite:'🎉 Invitación',modeBoo:'👻 Etiqueta Boo',sizeSquare:'Cuadrado 1:1',sizeStory:'Historia 9:16',sizePrint:'Imprimir 5×7',lblTpl:'Plantilla · 30 estilos',lblSize:'Tamaño',lblDl:'Descargar',lblShareTool:'Comparte esta herramienta gratuita',
+    fParty:'Título de la fiesta',fHost:'Anfitrión (opcional)',fDate:'Fecha',fTime:'Hora',fPlace:'Lugar',fRsvp:'RSVP',fNote:'Nota (opcional)',
+    bTo:'Para (vecino / familia)',bFrom:'De',bMsg:'Mensaje de la etiqueta',
+    dv_party:'Estás invitado — Noche de espanto',dv_host:'La familia Hollow',dv_date:'Sábado · 31 oct',dv_time:'7:00 PM',dv_place:'Callejón Elm 221',dv_rsvp:'Confirma antes del 24 oct · 555-0119',dv_note:'Se recomienda disfraz',
+    dv_bto:'Familia Miller',dv_bfrom:'Tu Boo secreto',dv_bmsg:'¡Un pequeño detalle ha llegado hasta ti! Sigue la diversión — prepara dos cestas Boo y déjalas en el porche de los vecinos con esta etiqueta.',
+    btnShare:'📤 Compartir',btnDl:'⬇ Descargar',btnPrint:'🖨 Imprimir',btnCopy:'Copiar',
+    dlHint1:'Las plantillas animadas se descargan como GIF en bucle; las demás como PNG.',
+    dlHint2:'📤 abre el panel de compartir de tu dispositivo con la tarjeta adjunta — WhatsApp, Telegram, Instagram, Email y más. En escritorio la tarjeta se guarda y se abre una ventana para compartir.',
+    badge1:'100% en tu navegador',badge2:'Nada se sube',badge3:'Sin registro',badge4:'Gratis',
+    capShare:'🎃 Hice una invitación animada de Halloween gratis en mi navegador — 30 plantillas, sin registro, nada se sube:',
+    booHead:'¡Te han hecho Boo!',booTag:'ETIQUETA BOO · HALLOWEEN {y}',booTo:'Para:',booFrom:'De:',booMade:'hecho gratis en TrendSnap',
+    ouijaYes:'SÍ',ouijaNo:'NO',spooky:'¡BOO!',
+    faq1s:'¿De verdad es gratis el generador de invitaciones?',
+    faq1p:'Sí — las 30 plantillas y todos los tamaños son gratis, sin marca de agua ni cuenta. Diez plantillas son animadas y se exportan como GIF.',
+    faq2s:'¿Se suben los datos de mi fiesta a algún sitio?',
+    faq2p:'No. Cada letra se dibuja en un lienzo dentro de tu navegador. Nada de lo que escribes sale de tu dispositivo.',
+    faq3s:'¿Cuántas plantillas hay?',
+    faq3p:'30 — diez animadas: Grabado Embrujado (un grabado en dominio público de Goya que parpadea como una aparición), Pesadilla Neón, Sesión Dorada, Bosque de Papel, Espíritu Pop, Parpadeo, Fantasmas, Caldero, Lluvia de Estrellas y Luz de Vela. Luego Clásico, Bruja, Retro, Vintage, Moderno, Minimalista, Kawaii, Huerto de Calabazas, Bosque Embrujado, Jack Light, Bruja Violeta, Noche Maligna, Gran Calabaza, Jack Brillante, Cielo Naranja, Marco de Ascua, Mascarada, Luna y Murciélagos, Casa Embrujada y Rincón de Telaraña — hay ambiente para cada fiesta.',
+    faq4s:'¿Cómo envío la invitación?',
+    faq4p:'Toca <b>Descargar</b> (las animadas dan un GIF en bucle, las demás un PNG) y publica la imagen donde quieras — o usa <b>📤 Compartir</b> para enviarla directo a WhatsApp / Telegram / Email y más. <b>Imprimir</b> crea invitaciones de papel en tamaño real 5×7.',
+    faq5s:'¿Qué es una etiqueta Boo?',
+    faq5p:'En el juego vecinal de Halloween, un "Boo" secreto deja una cesta con golosinas en un porche junto a una etiqueta. Quien la recibe prepara dos cestas y las pasa. Elige <b>Etiqueta Boo</b> arriba para imprimir esas etiquetas.',
+    notecert:'Aquí hacemos diversión de fiestas — no documentos formales. ¿Necesitas un certificado, diploma o tarjeta de negocio? Usa <a href="https://aiharryone.github.io/certificate-maker/" target="_blank" rel="noopener">Certificate Maker →</a>',
+    foot1:'TrendSnap · pequeñas herramientas gratis para el momento — nada se sube',foot2:'¿Dudas?',foot3:'Todas las herramientas',
+    capText:'🎃 Hice una invitación de Halloween gratis — 30 plantillas, sin registro: https://aiharryone.github.io/trendsnap/',
+    tpl_flicker:'Parpadeo',tpl_ghosts:'Fantasmas',tpl_cauldron:'Caldero',tpl_starfall:'Lluvia de Estrellas',tpl_candle:'Luz de Vela',
+    tpl_haunt:'Grabado Embrujado',tpl_synth:'Pesadilla Neón',tpl_seance:'Sesión Dorada',tpl_paperwoods:'Bosque de Papel',tpl_popspook:'Espíritu Pop',
+    tpl_orange:'Clásico',tpl_witch:'Bruja',tpl_retro:'Retro',tpl_vintage:'Vintage',tpl_modern:'Moderno',tpl_minimal:'Minimalista',tpl_kawaii:'Kawaii',tpl_patch:'Huerto de Calabazas',tpl_fog:'Bosque Embrujado',tpl_jack:'Jack Light',tpl_violet:'Bruja Violeta',tpl_night:'Noche Maligna',tpl_bigpump:'Gran Calabaza',tpl_face:'Jack Brillante',tpl_twilight:'Cielo Naranja',tpl_ember:'Marco de Ascua',tpl_purpure:'Mascarada',tpl_moonbat:'Luna y Murciélagos',tpl_house:'Casa Embrujada',tpl_cobweb:'Rincón de Telaraña'},
+  ja:{title:"無料ハロウィン招待状メーカー — アニメテンプレ、ログイン不要",
+    heroH1:'<span class="accent">ハロウィン招待状</span>を無料で作成 — ブラウザだけで完成',
+    sub:'<b>30種類のテンプレート（うち10種類がアニメーション）</b>を選んで、パーティー情報を入力するだけ。<b>PNGやループGIFをダウンロードして WhatsApp / Instagram へ</b>、<b>5×7カードとして印刷</b>もOK。ログイン不要、アップロード一切なし。',
+    countPre:'ハロウィンまであと ',
+    answer:'<b>これは何？</b>ブラウザ内で100%動く、無料の2026年ハロウィンパーティー招待状＆「Booされた！」バスケットタグメーカーです。30スタイル——うち10種がアニメーション（妖しい銅版画、ネオン悪夢、黄金の降霊術、紙の森、ポップ幽霊、光るかぼちゃ、おばけ、魔法の鍋、流れ星、ろうそくの灯り）、ほかにクラシック・魔女・レトロ・モダン・ミニマル・カワイイ・かぼちゃ畑・怖い森など——大人も子どもも楽しめるパーティーに。',
+    lblMode:'カード種類',modeInvite:'🎉 招待状',modeBoo:'👻 Booバスケットタグ',sizeSquare:'1:1 正方形',sizeStory:'9:16 ストーリー',sizePrint:'5×7 印刷',lblTpl:'テンプレート · 30種',lblSize:'サイズ',lblDl:'ダウンロード',lblShareTool:'この無料ツールをシェア',
+    fParty:'パーティータイトル',fHost:'主催者（任意）',fDate:'日付',fTime:'時間',fPlace:'場所',fRsvp:'RSVP',fNote:'ひとこと（任意）',
+    bTo:'宛先（ご近所 / ご家族）',bFrom:'差出人',bMsg:'タグのメッセージ',
+    dv_party:'ご招待 — こわい夜へ',dv_host:'Hollow 家族',dv_date:'10月31日（土）',dv_time:'午後7:00',dv_place:'エルム巷221',dv_rsvp:'10月24日までにご返事 · 555-0119',dv_note:'仮装大歓迎',
+    dv_bto:'ミラー家',dv_bfrom:'秘密の Boo から',dv_bmsg:'小さなお菓子があなたのもとへ！楽しみを続けよう——Boo バスケットを2つ作って、このタグと一緒にご近所の玄関先へ。',
+    btnShare:'📤 シェア',btnDl:'⬇ ダウンロード',btnPrint:'🖨 印刷',btnCopy:'コピー',
+    dlHint1:'アニメTemplateはループGIF、他はPNGでダウンロードされます。',
+    dlHint2:'📤 は端末の共有シートを開き、カードを WhatsApp・Telegram・Instagram・メールなどに直接送れます。デスクトップでは保存後に共有ウィンドウが開きます。',
+    badge1:'100% ブラウザ内で完結',badge2:'アップロードなし',badge3:'ログイン不要',badge4:'無料',
+    capShare:'🎃 ブラウザで無料のハロウィンアニメ招待状を作りました — 30テンプレ、ログイン不要、アップロードなし：',
+    booHead:'Boo された！',booTag:'BOO バスケットタグ · ハロウィン {y}',booTo:'宛先：',booFrom:'差出人：',booMade:'TrendSnap で無料作成',
+    ouijaYes:'はい',ouijaNo:'いいえ',spooky:'ボーッ！',
+    faq1s:'このハロウィン招待状メーカーは本当に無料？',
+    faq1p:'はい — 30種類のテンプレートもすべてのサイズも完全無料。透かしなし、アカウント登録も不要。10種類はアニメーションで GIF 書き出しに対応。',
+    faq2s:'入力したパーティー情報はアップロードされる？',
+    faq2p:'いいえ。文字はすべてブラウザ内のキャンバスに描かれるだけで、入力内容が端末の外に出ることはありません。',
+    faq3s:'テンプレートは何種類ある？',
+    faq3p:'全部で30種 — アニメーション10種：妖しい銅版画（ゴヤのパブリックドメイン版画が幽霊のように明滅）、ネオン悪夢、黄金の降霊術、紙の森、ポップ幽霊、かぼちゃ灯、おばけ、魔法の鍋、流れ星、ろうそくの灯り。ほかにクラシック・魔女・レトロ・ヴィンテージ・モダン・ミニマル・カワイイ・かぼちゃ畑・怖い森・ジャック灯・紫の魔女・邪悪な夜・ビッグかぼちゃ・光るジャック・オレンジの空・残火フレーム・仮面舞踏会・月とコウモリ・幽霊屋敷・蜘蛛の巣 — パーティーの雰囲気に合わせて選べます。',
+    faq4s:'招待状はどう送る？',
+    faq4p:'<b>ダウンロード</b>（アニメはループGIF、他はPNG）から画像をどこにでも投稿 — または <b>📤 シェア</b>で WhatsApp / Telegram / メールなどへ直接送信。<b>印刷</b>なら実サイズ 5×7 の紙の招待状に。',
+    faq5s:'Boo バスケットタグとは？',
+    faq5p:'ハロウィンのご近所ゲームでは、秘密の「Boo」がお菓子のバスケットをタグ付きで玄関先に置きます。受け取った人は2つのバスケットを作って次へ渡します。上の <b>Boo バスケットタグ</b>を選ぶとそのタグを印刷できます。',
+    notecert:'ここはホリデーの楽しみ用 — 正式文書ではありません。賞状・証書・名刺が必要ですか？<a href="https://aiharryone.github.io/certificate-maker/" target="_blank" rel="noopener">Certificate Maker →</a>',
+    foot1:'TrendSnap · 今の気分にぴったりの無料ミニツール — アップロードなし',foot2:'質問は？',foot3:'すべてのツール',
+    capText:'🎃 ブラウザで無料のハロウィン招待状 — 30テンプレ、ログイン不要： https://aiharryone.github.io/trendsnap/',
+    tpl_flicker:'かぼちゃ灯',tpl_ghosts:'おばけ',tpl_cauldron:'魔法の鍋',tpl_starfall:'流れ星',tpl_candle:'ろうそく',
+    tpl_haunt:'妖しい銅版画',tpl_synth:'ネオン悪夢',tpl_seance:'黄金の降霊術',tpl_paperwoods:'紙の森',tpl_popspook:'ポップ幽霊',
+    tpl_orange:'クラシック',tpl_witch:'魔女',tpl_retro:'レトロ',tpl_vintage:'ヴィンテージ',tpl_modern:'モダン',tpl_minimal:'ミニマル',tpl_kawaii:'カワイイ',tpl_patch:'かぼちゃ畑',tpl_fog:'怖い森',tpl_jack:'ジャック灯',tpl_violet:'紫の魔女',tpl_night:'邪悪な夜',tpl_bigpump:'ビッグかぼちゃ',tpl_face:'光るジャック',tpl_twilight:'オレンジの空',tpl_ember:'残火フレーム',tpl_purpure:'仮面舞踏会',tpl_moonbat:'月とコウモリ',tpl_house:'幽霊屋敷',tpl_cobweb:'蜘蛛の巣'},
+  fr:{title:"Invitations d'Halloween gratuites — templates animés, sans compte",
+    heroH1:'Créez une <span class="accent">invitation d\'Halloween gratuite</span> — dans votre navigateur',
+    sub:'Choisissez l\'un des <b>30 templates effrayants — 10 animés</b>, saisissez les détails de votre fête, puis <b>téléchargez un PNG ou un GIF en boucle pour WhatsApp / Instagram</b> ou <b>imprimez une carte 5×7</b>. Sans compte, rien n\'est envoyé.',
+    countPre:'Halloween dans ',
+    answer:'<b>Qu\'est-ce que c\'est ?</b> Un générateur gratuit d\'invitations pour fêtes d\'Halloween 2026 et d\'étiquettes « Tu as été BOO ! » qui fonctionne à 100 % dans votre navigateur. 30 styles — 10 animés (gravure hantée, cauchemar néon, séance dorée, forêt de papier, esprit pop, citrouille lumineuse, fantômes, chaudron bouillonnant, pluie d\'étoiles, lueur de bougie) plus Classique, Sorcière, Rétro, Vintage, Moderne, Minimaliste, Kawaii, Citrouillière, Forêt hantée et plus — pour les fêtes d\'adultes, d\'enfants et tout le reste.',
+    lblMode:'Type de carte',modeInvite:'🎉 Invitation',modeBoo:'👻 Étiquette Boo',sizeSquare:'Carré 1:1',sizeStory:'Story 9:16',sizePrint:'Impression 5×7',lblTpl:'Template · 30 styles',lblSize:'Format',lblDl:'Télécharger',lblShareTool:'Partagez cet outil gratuit',
+    fParty:'Titre de la fête',fHost:'Hôte (facultatif)',fDate:'Date',fTime:'Heure',fPlace:'Lieu',fRsvp:'RSVP',fNote:'Mot (facultatif)',
+    bTo:'À (voisin / famille)',bFrom:'De la part de',bMsg:'Message de l\'étiquette',
+    dv_party:'Vous êtes invité — Nuit effrayante',dv_host:'La famille Hollow',dv_date:'Samedi · 31 oct',dv_time:'19 h 00',dv_place:'221 allée Elm Hollow',dv_rsvp:'RSVP avant le 24 oct · 555-0119',dv_note:'Déguisements fortement encouragés',
+    dv_bto:'Famille Miller',dv_bfrom:'Votre Boo secret',dv_bmsg:'Une petite gourmandise est arrivée jusqu\'à vous ! Continuez le jeu — préparez deux paniers Boo et déposez-les chez les voisins avec cette étiquette.',
+    btnShare:'📤 Partager',btnDl:'⬇ Télécharger',btnPrint:'🖨 Imprimer',btnCopy:'Copier',
+    dlHint1:'Les templates animés sont téléchargés en GIF en boucle ; les autres en PNG.',
+    dlHint2:'📤 ouvre la feuille de partage de votre appareil avec la carte jointe — WhatsApp, Telegram, Instagram, E-mail et plus. Sur ordinateur, la carte est enregistrée puis une fenêtre de partage s\'ouvre.',
+    badge1:'100 % dans votre navigateur',badge2:'Rien n\'est envoyé',badge3:'Sans compte',badge4:'Gratuit',
+    capShare:"🎃 J'ai fait une invitation d'Halloween animée gratuite dans mon navigateur — 30 templates, sans compte, rien n'est envoyé :",
+    booHead:'Tu as été BOO !',booTag:'ÉTIQUETTE BOO · HALLOWEEN {y}',booTo:'À :',booFrom:'De :',booMade:'fait gratuitement sur TrendSnap',
+    ouijaYes:'OUI',ouijaNo:'NON',spooky:'BOUH !',
+    faq1s:'Ce générateur d\'invitations est-il vraiment gratuit ?',
+    faq1p:'Oui — les 30 templates et tous les formats sont gratuits, sans filigrane ni compte. Dix templates sont animés et s\'exportent en GIF.',
+    faq2s:'Mes détails de fête sont-ils envoyés quelque part ?',
+    faq2p:'Non. Chaque lettre est dessinée sur un canevas dans votre navigateur. Rien de ce que vous tapez ne quitte votre appareil.',
+    faq3s:'Combien de templates sont disponibles ?',
+    faq3p:'30 — dont dix animés : Gravure hantée (une gravure de Goya du domaine public qui vacille comme une apparition), Cauchemar Néon, Séance Dorée, Forêt de Papier, Esprit Pop, Vacillement, Fantômes, Chaudron, Pluie d\'Étoiles et Lueur de Bougie. Puis Classique, Sorcière, Rétro, Vintage, Moderne, Minimaliste, Kawaii, Citrouillière, Forêt hantée, Jack Light, Sorcière Violette, Nuit Méchante, Grande Citrouille, Jack Lumineux, Ciel Orange, Cadre Braise, Mascarade, Lune & Chauves-souris, Maison hantée et Coin Toile — de quoi coller à toutes les ambiances.',
+    faq4s:'Comment envoyer l\'invitation ?',
+    faq4p:'Touchez <b>Télécharger</b> (les animés donnent un GIF en boucle, les autres un PNG) et publiez l\'image n\'importe où — ou utilisez <b>📤 Partager</b> pour l\'envoyer directement vers WhatsApp / Telegram / E-mail et plus. <b>Imprimer</b> crée des invitations papier au vrai format 5×7.',
+    faq5s:'Qu\'est-ce qu\'une étiquette Boo ?',
+    faq5p:'Dans le jeu de voisinage d\'Halloween, un « Boo » secret dépose un petit panier de gourmandises sur un porche avec une étiquette. Celui qui le reçoit prépare deux paniers et les transmet. Choisissez <b>Étiquette Boo</b> ci-dessus pour imprimer ces étiquettes.',
+    notecert:'Ici on fait des plaisirs de fête — pas des documents officiels. Besoin d\'un certificat, d\'un diplôme ou d\'une carte de visite ? Essayez <a href="https://aiharryone.github.io/certificate-maker/" target="_blank" rel="noopener">Certificate Maker →</a>',
+    foot1:"TrendSnap · des petits outils gratuits pour l'instant présent — rien n'est envoyé",foot2:'Des questions ?',foot3:'Tous les outils',
+    capText:"🎃 J'ai fait une invitation d'Halloween gratuite — 30 templates, sans compte : https://aiharryone.github.io/trendsnap/",
+    tpl_flicker:'Vacillement',tpl_ghosts:'Fantômes',tpl_cauldron:'Chaudron',tpl_starfall:'Pluie d\'Étoiles',tpl_candle:'Lueur de Bougie',
+    tpl_haunt:'Gravure hantée',tpl_synth:'Cauchemar Néon',tpl_seance:'Séance Dorée',tpl_paperwoods:'Forêt de Papier',tpl_popspook:'Esprit Pop',
+    tpl_orange:'Classique',tpl_witch:'Sorcière',tpl_retro:'Rétro',tpl_vintage:'Vintage',tpl_modern:'Moderne',tpl_minimal:'Minimaliste',tpl_kawaii:'Kawaii',tpl_patch:'Citrouillière',tpl_fog:'Forêt hantée',tpl_jack:'Jack Light',tpl_violet:'Sorcière Violette',tpl_night:'Nuit Méchante',tpl_bigpump:'Grande Citrouille',tpl_face:'Jack Lumineux',tpl_twilight:'Ciel Orange',tpl_ember:'Cadre Braise',tpl_purpure:'Mascarade',tpl_moonbat:'Lune & Chauves-souris',tpl_house:'Maison hantée',tpl_cobweb:'Coin Toile'}
+  };
   var AT=1200; // 动画相位时钟(ms);静态模板忽略它,动画模板读它算相位
 
   var TEMPLATES={
@@ -1066,7 +1279,7 @@
     ctx.globalAlpha=1;
     // YES / NO 弧端
     ctx.fillStyle='rgba(212,175,55,.8)';ctx.font='normal '+W*.021+'px Georgia,serif';ctx.textAlign='center';
-    ctx.fillText('Y E S',W*.12,H*.1);ctx.fillText('N O',W*.88,H*.1);
+    ctx.fillText(L('ouijaYes'),W*.12,H*.1);ctx.fillText(L('ouijaNo'),W*.88,H*.1);
     // 乩板沿弧游走(显灵板)
     var pp=Math.sin(t*.00035)*.5+.5;
     var pxx=W*(.16+pp*.68),pyy=H*.225+Math.sin(pp*Math.PI)*H*.02;
@@ -1191,7 +1404,7 @@
     ctx.beginPath();for(var s4=0;s4<24;s4++){var an2=s4/24*Math.PI*2,rr3=(s4%2?.62:1)*W*.09*pb;
       s4?ctx.lineTo(Math.cos(an2)*rr3,Math.sin(an2)*rr3):ctx.moveTo(Math.cos(an2)*rr3,Math.sin(an2)*rr3);}ctx.closePath();ctx.fill();ctx.stroke();
     ctx.fillStyle='#FFF7E0';ctx.font='normal '+W*.026+'px Impact,"Arial Black",sans-serif';ctx.textAlign='center';
-    ctx.fillText('SPOOKY!',0,W*.011);
+    ctx.fillText(L('spooky'),0,W*.011);
     ctx.restore();
     // 波普蝙蝠一排(半调感)
     for(var b2=0;b2<4;b2++){batC(ctx,W*(.32+b2*.11),H*.1+Math.sin(t*.003+b2*1.9)*H*.014,W*(.012+b2%2*.004),'rgba(24,19,16,.85)');}
@@ -1418,7 +1631,7 @@
   function drawInviteText(ctx,W,H,tp){
     var DISP=D(),disp=function(sz){return 'normal '+sz+'px '+DISP};
     var ink=tp.ink,ink2=tp.ink2;
-    var f=$id('f-party').value.trim()||"You're Invited — A Spooky Night";
+    var f=$id('f-party').value.trim()||L('dv_party');
     var host=$id('f-host').value.trim(),date=$id('f-date').value.trim(),time=$id('f-time').value.trim(),
         place=$id('f-place').value.trim(),rsvp=$id('f-rsvp').value.trim(),note=$id('f-note').value.trim();
     ctx.textAlign='center';
@@ -1466,16 +1679,16 @@
     // headline
     ctx.textAlign='center';
     ctx.font='normal '+W*.018+'px '+(tpl().body||BODY);ctx.fillStyle=tp.ink2;
-    ctx.fillText('BOO-BASKET TAG · HALLOWEEN '+(new Date().getFullYear()),W/2,H*.15,W*.8);
-    var head="You've been BOO'd!";
+    ctx.fillText(L('booTag').replace('{y}',new Date().getFullYear()),W/2,H*.15,W*.8);
+    var head=L('booHead');
     var hs=fitFont(ctx,head,W*.7,W*.098);
     ctx.font='normal '+hs+'px '+DISP;ctx.fillStyle=tp.ink;ctx.fillText(head,W/2,H*.34,W*.7);
     // ornament
     ctx.strokeStyle=tp.ink2;ctx.lineWidth=W*.005;ctx.beginPath();ctx.moveTo(W*.28,H*.42);ctx.lineTo(W*.72,H*.42);ctx.stroke();
     // to/from
     ctx.font='normal '+W*.025+'px '+(tpl().body||BODY);ctx.textBaseline='middle';
-    ctx.fillStyle=tp.ink2;ctx.fillText('To:  '+( $id('b-to').value.trim()||'…'),W/2,H*.5,W*.72);
-    ctx.fillStyle=tp.ink;ctx.fillText('From:  '+($id('b-from').value.trim()||'Your secret Boo'),W/2,H*.565,W*.72);
+    ctx.fillStyle=tp.ink2;ctx.fillText(L('booTo')+' '+($id('b-to').value.trim()||'…'),W/2,H*.5,W*.72);
+    ctx.fillStyle=tp.ink;ctx.fillText(L('booFrom')+' '+($id('b-from').value.trim()||L('dv_bfrom')),W/2,H*.565,W*.72);
     // msg
     var msg=$id('b-msg').value.trim();
     if(msg){ctx.font='normal '+W*.0225+'px '+(tpl().body||BODY);
@@ -1486,7 +1699,7 @@
       for(var i=0;i<wl.length&&i<4;i++)ctx.fillText(wl[i],W/2,sy+i*lh,W*.72);}
     // footer
     ctx.font='600 '+W*.0145+'px '+(tpl().body||BODY);ctx.fillStyle=tp.ink2;
-    ctx.fillText('made free at TrendSnap',W/2,H*.905,W*.5);
+    ctx.fillText(L('booMade'),W/2,H*.905,W*.5);
   }
 
   var SIZE_MAP={square:[1080,1080,'1:1 · 1080×1080'],story:[1080,1920,'9:16 · 1080×1920'],print:[1500,2100,'5×7 · 1500×2100']};
@@ -1506,8 +1719,35 @@
     $id('modeSeg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;MODE=b.dataset.mode;sync(this,function(d){return d===MODE});modeFields();render();save();});
     $id('tplSel').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;TPL=b.dataset.tpl;sync(this,function(d){return d===TPL});render();save();});
     $id('sizeSeg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;SIZE=b.dataset.size;sync(this,function(d){return d===SIZE});render();save();});
+    $id('langbar').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;applyLang(b.dataset.lang);});
     ['f-party','f-host','f-date','f-time','f-place','f-rsvp','f-note','b-to','b-from','b-msg'].forEach(function(i){
       var el=$id(i);el.addEventListener('input',function(){render();save();});});
+  }
+  /* ---------- 语言切换引擎 (2026-09-10) ---------- */
+  function applyLang(lg){
+    if(!I18N[lg])lg='en';
+    LANG=lg;
+    try{localStorage.setItem('trendsnap_lang',lg)}catch(e){}
+    var d=I18N[lg];
+    document.documentElement.lang=(lg==='zhHant'?'zh-Hant':lg==='zhHans'?'zh-Hans':lg);
+    document.title=d.title;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var v=d[el.getAttribute('data-i18n')];if(v!=null)el.textContent=v;});
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){var v=d[el.getAttribute('data-i18n-html')];if(v!=null)el.innerHTML=v;});
+    // 模板按钮名(尾文本节点,dot 不动)
+    $id('tplSel').querySelectorAll('button[data-tpl]').forEach(function(b){
+      var nm=d['tpl_'+b.dataset.tpl]||I18N.en['tpl_'+b.dataset.tpl]||'';
+      b.childNodes[b.childNodes.length-1].textContent=' '+nm+((TEMPLATES[b.dataset.tpl]||{}).anim?' ✨':'');});
+    // 模式/尺寸按钮文案
+    $id('modeSeg').querySelectorAll('button[data-mode]').forEach(function(b){b.textContent=d[b.dataset.mode==='invite'?'modeInvite':'modeBoo']||b.textContent;});
+    $id('sizeSeg').querySelectorAll('button[data-size]').forEach(function(b,i){b.textContent=[d.sizeSquare,d.sizeStory,d.sizePrint][i]||b.textContent;});
+    // 字段默认值:仅当当前值是任一语言的默认值时才跟随切换(用户手输内容不动)
+    ['f-party','f-host','f-date','f-time','f-place','f-rsvp','f-note','b-to','b-from','b-msg'].forEach(function(id){
+      var el=$id(id),key=FIELDKEYS[id],cur=el.value,isDef=false;
+      for(var k in I18N){if(I18N[k][key]===cur){isDef=true;break;}}
+      if(isDef&&d[key]!=null)el.value=d[key];});
+    var cap=$id('capText');if(cap)cap.value=d.capText;
+    sync($id('langbar'),function(dd){return dd===LANG});
+    render();save();
   }
   function dataURL(){return $id('pv').toDataURL('image/png')}
   $id('btnDl').addEventListener('click',function(){
@@ -1593,13 +1833,13 @@
       var name=blob.type==='image/gif'?'halloween-invite.gif':'halloween-invite.png';
       var file=new File([blob],name,{type:blob.type});
       if(navigator.canShare&&navigator.canShare({files:[file]})){
-        return navigator.share({files:[file],title:"You're invited! 🎃",text:CAP}).then(function(){
+        return navigator.share({files:[file],title:"You're invited! 🎃",text:capNow()}).then(function(){
           btn.textContent='Shared ✓';});
       }
       /* 桌面降级:自动下载卡片 + 打开分享窗 + 文案已在下方可复制 */
       var a=document.createElement('a');a.download=name;a.href=window.URL.createObjectURL(blob);
       document.body.appendChild(a);a.click();a.remove();
-      window.open(NETS.x.replace('{t}',encodeURIComponent(CAP)).replace('{u}',encodeURIComponent(URL)),'_blank','noopener');
+      window.open(NETS.x.replace('{t}',encodeURIComponent(capNow())).replace('{u}',encodeURIComponent(URL)),'_blank','noopener');
       btn.textContent='Saved ✓ attach it';
     }).catch(function(e){if(!e||e.name!=='AbortError')console.error(e);})
       .then(function(){setTimeout(function(){btn.textContent=old;btn.disabled=false;},1500);});
@@ -1612,12 +1852,12 @@
     var img=$id('printImg');img.src=c.toDataURL('image/png');
     img.onload=function(){window.print()};});
   var URL='https://aiharryone.github.io/trendsnap/';
-  var CAP='🎃 I made a free animated Halloween invite in my browser — 30 templates, no login, nothing uploaded: '+URL;
+  function capNow(){return L('capShare')+' '+URL;}
   var NETS={x:'https://twitter.com/intent/tweet?text={t}&url={u}',wa:'https://wa.me/?text={t}%20{u}',
     fb:'https://www.facebook.com/sharer/sharer.php?u={u}',reddit:'https://www.reddit.com/submit?url={u}&title={t}',tg:'https://t.me/share/url?url={u}&text={t}',
     li:'https://www.linkedin.com/sharing/share-offsite/?url={u}',em:'mailto:?subject={t}&body={t}%20{u}'};
   document.querySelectorAll('.sharebtn').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();
-    window.open(NETS[a.dataset.net].replace('{t}',encodeURIComponent(CAP)).replace('{u}',encodeURIComponent(URL)),'_blank','noopener');});});
+    window.open(NETS[a.dataset.net].replace('{t}',encodeURIComponent(capNow())).replace('{u}',encodeURIComponent(URL)),'_blank','noopener');});});
   $id('btnCopy').addEventListener('click',function(){var inp=$id('capText');inp.select();var done=function(){var b=$id('btnCopy'),o=b.textContent;b.textContent='Copied ✓';setTimeout(function(){b.textContent=o},1200);};
     try{navigator.clipboard.writeText(inp.value).then(done);}catch(e){document.execCommand('copy');done();}});
   var SAVE='trendsnap_invite_v2';
@@ -1640,7 +1880,21 @@
     cta.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');cta.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});
 
   // ---------- boot ----------
-  load();sync($id('modeSeg'),function(d){return d===MODE});
+  load();
+  (function(){
+    var lq=new URLSearchParams(location.search).get('lang'),ls=null;
+    try{ls=localStorage.getItem('trendsnap_lang')}catch(e){}
+    if(lq&&I18N[lq]){LANG=lq;return;}
+    if(ls&&I18N[ls]){LANG=ls;return;}
+    var nl=(navigator.language||'en').toLowerCase();
+    if(nl.indexOf('zh')>-1)LANG=(nl.indexOf('tw')>-1||nl.indexOf('hk')>-1||nl.indexOf('hant')>-1)?'zhHant':'zhHans';
+    else if(nl.indexOf('es')===0)LANG='es';
+    else if(nl.indexOf('ja')===0)LANG='ja';
+    else if(nl.indexOf('fr')===0)LANG='fr';
+    else LANG='en';
+  })();
+  applyLang(LANG);
+  sync($id('modeSeg'),function(d){return d===MODE});
   sync($id('tplSel'),function(d){return d===TPL});
   sync($id('sizeSeg'),function(d){return d===SIZE});
   modeFields();bind();

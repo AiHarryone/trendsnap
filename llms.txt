@@ -1,14 +1,18 @@
 # TrendSnap
 
-> Free seasonal event tools that run 100% in your browser. Start with the Halloween Invitation Maker: 25 hand-drawn illustrated templates — 5 of them animated (flickering jack-o'-lantern, floating ghosts, bubbling witch's cauldron, shooting stars, swaying candlelight) — with live preview and export as still PNG or looping animated GIF in three sizes (1:1 square, 9:16 story, 5×7 print). No signup, no watermark, nothing uploaded — every card is drawn locally on canvas.
+> Free seasonal event tools that run 100% in your browser. Start with the Halloween Invitation Maker: 30 hand-drawn illustrated templates — 10 of them animated (flickering jack-o'-lantern, floating ghosts, bubbling witch's cauldron, shooting stars, swaying candlelight, Goya-etching ghost, neon nightmare, golden séance, paper-cut woods, pop-art spook) — with live preview, a built-in language switcher (English, 繁體中文, 简体中文, Español, 日本語, Français) and export as still PNG or looping animated GIF in three sizes (1:1 square, 9:16 story, 5×7 print). No signup, no watermark, nothing uploaded — every card is drawn locally on canvas.
 
 ## Tools
 
-- [Halloween Invitation & Boo Basket Tag Maker](https://aiharryone.github.io/trendsnap/halloween-invite.html): make a free Halloween 2026 party invitation or a "You've been BOO'd!" neighbourhood gift tag from 25 hand-drawn templates. Editable title, date, time and place with live preview; one-click share to X, WhatsApp, Facebook, Reddit, Telegram, LinkedIn or email; PNG download on desktop and looping GIF export for the animated templates.
+- [Halloween Invitation & Boo Basket Tag Maker](https://aiharryone.github.io/trendsnap/halloween-invite.html): make a free Halloween 2026 party invitation or a "You've been BOO'd!" neighbourhood gift tag from 30 hand-drawn templates. Editable title, date, time and place with live preview; one-click share to X, WhatsApp, Facebook, Reddit, Telegram, LinkedIn or email; PNG download on desktop and looping GIF export for the animated templates.
 
-## 25 Hand-Drawn Templates (5 Animated)
+## Languages
 
-Animated: Flicker (jack-o'-lantern with flickering candle glow) · Ghost Drift (floating ghosts) · Witch's Cauldron (rising bubbles) · Starfall (twinkling stars and shooting stars) · Candlelight (swaying flames)
+The maker switches instantly between 6 languages — English, 繁體中文, 简体中文, Español, 日本語 and Français — from the language bar in the card panel. Card text, form labels, FAQ and page copy are all translated; the same 30 templates and 10 animations are available in every language. Choose with `?lang=zhHans` (`en`, `zhHant`, `zhHans`, `es`, `ja`, `fr`).
+
+## 30 Hand-Drawn Templates (10 Animated)
+
+Animated: Flicker (jack-o'-lantern with flickering candle glow) · Ghost Drift (floating ghosts) · Witch's Cauldron (rising bubbles) · Starfall (twinkling stars and shooting stars) · Candlelight (swaying flames) · Haunted Etching (Goya public-domain ghost developing) · Neon Nightmare (synthwave sunset) · Golden Séance (ouija board and candle flames) · Paper Woods (layered paper-cut forest) · Pop Spook (Posada skeleton puppet)
 
 Still: Classic · Witch · Retro · Vintage · Modern · Minimal · Kawaii · Pumpkin Patch · Haunted Forest · Jack Light · Violet Witch · Wicked Night · Big Pumpkin · Glow Jack · Orange Sky · Ember Frame · Masquerade · Moon & Bats · Haunted House · Web Corner
 
@@ -22,7 +26,7 @@ Template styles range from cute (Kawaii, Pumpkin Patch, Big Pumpkin) to spooky (
 
 ## Privacy & Pricing
 
-- 100% free: every template, every export size, no watermark, no account required.
+- 100% free: every template, every export size, every language, no watermark, no account required.
 - Private by design: cards are drawn on your device's canvas; party details and images never leave the browser.
 
 ## Resources
